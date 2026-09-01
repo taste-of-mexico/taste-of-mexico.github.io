@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órale – Authentic Mexican Flavor · Limerick</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='10' height='20' fill='%23006847'/%3E%3Crect x='10' width='10' height='20' fill='%23ffffff'/%3E%3Crect x='20' width='10' height='20' fill='%23CE1126'/%3E%3Ccircle cx='15' cy='10' r='3' fill='none' stroke='%237a5a2e' stroke-width='1.3'/%3E%3Ccircle cx='15' cy='10' r='1.3' fill='%235a7a3a'/%3E%3C/svg%3E">
+<meta name="description" content="Authentic home-style Mexican food from across the country, with a rotating menu of regional dishes. Pozole, cochinita pibil, tamales and more. Order in Limerick via Uber Eats, Deliveroo and WhatsApp.">
+
+<!-- Schema.org for local SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "Órale – Authentic Mexican Flavor",
+  "servesCuisine": "Mexican",
+  "email": "orale.mexican.flavor@gmail.com",
+  "telephone": "+353 89 961 0776",
+  "address": { "@type": "PostalAddress", "addressLocality": "Limerick", "addressCountry": "IE" },
+  "areaServed": "Limerick, Ireland"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --chile:#B22222;
+    --nopal:#006847;
+    --cempasuchil:#FFD700;
+    --talavera:#0047AB;
+    --paper:#FBF6EC;
+    --paper-2:#F4ECDA;
+    --ink:#241712;
+    --ink-soft:#5c4a3e;
+    --line:#e3d6bd;
+    --display:"Fraunces",Georgia,serif;
+    --body:"DM Sans",system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Papel picado signature ---------- */
+  .papel{
+    display:flex;width:100%;height:42px;overflow:hidden;line-height:0;
+    background:var(--talavera);
+  }
+  .papel svg{height:42px;flex:0 0 auto;}
+  .papel-flag{transform-origin:top center;}
+  @media(prefers-reduced-motion:no-preference){
+    .papel-flag{animation:sway 5s ease-in-out infinite;}
+    .papel svg:nth-child(2n) .papel-flag{animation-delay:-1.2s;}
+    .papel svg:nth-child(3n) .papel-flag{animation-delay:-2.4s;}
+  }
+  @keyframes sway{0%,100%{transform:rotate(-1.2deg);}50%{transform:rotate(1.2deg);}}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1140px;margin:0 auto;}
+  .brand-mark{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:1.4rem;letter-spacing:.04em;color:var(--chile);text-decoration:none;}
+  .brand-mark span.dot{color:var(--talavera);}
+  .flag{display:inline-block;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.08);vertical-align:middle;flex:0 0 auto;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--chile);}
+  .lang-toggle{
+    font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
+    border:1.5px solid var(--talavera);color:var(--talavera);background:transparent;
+    padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
+  }
+  .lang-toggle:hover{background:var(--talavera);color:#fff;}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .nav-toggle{
+    display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+    width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;
+    background:transparent;cursor:pointer;padding:0;flex:0 0 auto;
+  }
+  .nav-toggle-bar{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-overlay{
+    position:fixed;inset:0;background:rgba(36,23,18,.45);z-index:60;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .nav-overlay.is-open{opacity:1;pointer-events:auto;}
+  .nav-panel{
+    position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);
+    background:var(--paper);z-index:61;box-shadow:-8px 0 24px rgba(0,0,0,.18);
+    transform:translateX(100%);transition:transform .28s ease;
+    display:flex;flex-direction:column;padding:18px;
+  }
+  .nav-panel.is-open{transform:translateX(0);}
+  .nav-panel-head{display:flex;justify-content:flex-end;margin-bottom:8px;}
+  .nav-panel-close{
+    width:44px;height:44px;border:none;border-radius:50%;
+    background:rgba(0,0,0,.06);color:var(--ink);font-size:1.6rem;line-height:1;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .nav-panel-close:hover{background:rgba(0,0,0,.12);}
+  .nav-panel-links{display:flex;flex-direction:column;gap:2px;}
+  .nav-panel-links a{
+    display:flex;align-items:center;min-height:44px;padding:12px 10px;
+    text-decoration:none;font-size:1rem;font-weight:600;letter-spacing:.02em;
+    color:var(--ink);border-bottom:1px solid var(--line);transition:color .2s;
+  }
+  .nav-panel-links a:hover{color:var(--chile);}
+  .nav-overlay[hidden],.nav-panel[hidden]{display:none;}
+  @media(max-width:760px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--paper);}
+  .hero-inner{max-width:1140px;margin:0 auto;padding:74px 24px 64px;position:relative;z-index:2;}
+  .eyebrow{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--nopal);margin-bottom:20px;}
+  .hero h1{
+    font-size:clamp(3.4rem,11vw,7.2rem);
+    font-weight:900;letter-spacing:.02em;color:var(--chile);
+    line-height:.92;margin-bottom:8px;
+  }
+  .hero h1 .flavor{display:block;color:var(--talavera);font-size:clamp(1.4rem,4.4vw,2.6rem);font-weight:600;font-style:italic;letter-spacing:.06em;margin-top:10px;}
+  .hero-sub{max-width:560px;font-size:1.2rem;color:var(--ink-soft);margin:26px 0 34px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;
+    font-size:.92rem;letter-spacing:.02em;padding:14px 22px;border-radius:999px;
+    transition:transform .15s,box-shadow .15s;border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--chile);color:#fff;box-shadow:0 6px 0 #7d1818;}
+  .btn-primary:hover{box-shadow:0 8px 0 #7d1818;}
+  .btn-green{background:var(--nopal);color:#fff;box-shadow:0 6px 0 #00472f;}
+  .btn-green:hover{box-shadow:0 8px 0 #00472f;}
+  .btn-out{background:transparent;color:var(--talavera);border-color:var(--talavera);}
+  .btn-out:hover{background:var(--talavera);color:#fff;}
+  .hero-tile{position:absolute;right:30px;top:50%;transform:translateY(-50%);width:min(420px,40vw);height:auto;z-index:1;}
+  @media(max-width:760px){.hero-tile{display:none;}}
+
+  /* ---------- Talavera divider ---------- */
+  .divider{height:30px;background-repeat:repeat-x;background-size:60px 30px;background-position:center;}
+
+  /* ---------- Sections ---------- */
+  section{padding:72px 0;}
+  .sec-head{margin-bottom:14px;}
+  .sec-eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--talavera);}
+  .sec-title{font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--ink);margin:8px 0 0;}
+  .sec-intro{max-width:620px;color:var(--ink-soft);margin-top:16px;font-size:1.08rem;}
+
+  /* ---------- Order section ---------- */
+  #order{background:var(--paper-2);}
+  .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:40px;}
+  .order-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;}
+  .order-card h3{font-size:1.35rem;margin-bottom:8px;color:var(--chile);}
+  .order-card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 22px;flex:1;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--cempasuchil);color:#5a4500;margin-bottom:14px;width:fit-content;}
+
+  /* ---------- Menu ---------- */
+  .menu-note{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:30px;font-size:.9rem;color:var(--ink-soft);}
+  .veg-key{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+  .veg-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--nopal);color:#fff;font-size:.72rem;font-weight:700;}
+  .menu-cat{margin-top:54px;}
+  .menu-cat-title{font-size:1.6rem;color:var(--talavera);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--cempasuchil) 0 8px,transparent 8px 16px);}
+  .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;}
+  .dish{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+  .dish-photo{aspect-ratio:16/10;background:
+      repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);
+    display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line);}
+  .dish-photo svg{width:40px;height:40px;opacity:.5;}
+  .dish-photo span{position:absolute;bottom:8px;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#a8967c;font-weight:700;}
+  .dish-photo img{cursor:zoom-in;}
+  .dish-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+  .dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
+  .dish-name{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.2;}
+  .dish-price{font-weight:700;color:var(--ink-soft);white-space:nowrap;border:1.5px dashed var(--line);border-radius:8px;padding:3px 10px;font-size:.86rem;}
+  .dish-desc{color:var(--ink-soft);font-size:.95rem;margin:10px 0 14px;flex:1;}
+  .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+  .dish-more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--talavera);text-decoration:none;}
+  .dish-more:hover{text-decoration:underline;}
+  .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
+  .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
+  .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
+  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--nopal);color:#fff;font-size:.66rem;font-weight:700;margin-left:8px;vertical-align:middle;}
+
+  /* ---------- About ---------- */
+  #about{background:var(--paper-2);}
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:44px;}
+  .member{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:center;}
+  .photo-ph{aspect-ratio:1/1;background:
+      radial-gradient(circle at 50% 38%,#fff 0 28%,transparent 28%),
+      linear-gradient(135deg,var(--talavera),var(--nopal));
+    display:flex;align-items:flex-end;justify-content:center;position:relative;}
+  .photo-ph::before{content:"";position:absolute;bottom:0;width:60%;height:34%;background:#fff;border-radius:50% 50% 0 0;opacity:.92;}
+  .photo-ph span{position:relative;z-index:2;margin-bottom:18px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:700;background:rgba(0,0,0,.28);padding:5px 12px;border-radius:999px;}
+  .member-body{padding:24px 22px 28px;}
+  .member-name{font-family:var(--display);font-weight:700;font-size:1.3rem;}
+  .member-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chile);margin:8px 0 14px;line-height:1.5;}
+  .member-bio{color:var(--ink-soft);font-size:.96rem;}
+
+  /* ---------- Decorative Mexican motifs (subtle, behind content) ---------- */
+  .motif{position:absolute;pointer-events:none;z-index:0;opacity:.07;}
+  section{position:relative;}
+  section > .wrap{position:relative;z-index:1;}
+  .order-grid,.team-grid{position:relative;z-index:1;}
+
+  /* ---------- Allergen / safety ---------- */
+  .safety-box{margin-top:36px;background:var(--talavera);color:#fff;border-radius:20px;padding:38px 34px;display:grid;grid-template-columns:1fr;gap:14px;}
+  .safety-box h3{color:#fff;font-size:1.5rem;}
+  .safety-box p{margin:0;color:rgba(255,255,255,.9);font-size:1.02rem;}
+  .safety-box strong{color:var(--cempasuchil);}
+
+  /* ---------- Contact ---------- */
+  #contact{background:var(--chile);color:#fff;}
+  #contact .sec-eyebrow{color:var(--cempasuchil);}
+  #contact .sec-title{color:#fff;}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:38px;}
+  .contact-item .lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cempasuchil);margin-bottom:6px;}
+  .contact-item a,.contact-item p{color:#fff;text-decoration:none;font-size:1.08rem;margin:0;font-weight:500;}
+  .contact-item a:hover{text-decoration:underline;}
+  .socials{display:flex;gap:14px;margin-top:6px;}
+  .socials a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--cempasuchil);}
+
+  /* ---------- Footer ---------- */
+  footer{background:#1a0f0a;color:#caa;padding:34px 0;font-size:.86rem;}
+  .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;}
+  footer a{color:var(--cempasuchil);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  :focus-visible{outline:3px solid var(--talavera);outline-offset:2px;border-radius:4px;}
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:200;
+    display:flex;align-items:center;justify-content:center;
+    padding:28px;background:rgba(10,6,4,.9);
+    opacity:0;visibility:hidden;transition:opacity .2s ease;
+  }
+  .lightbox.open{opacity:1;visibility:visible;}
+  .lightbox-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute;top:16px;right:16px;width:44px;height:44px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:50%;
+    font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.3);}
+
+  /* ---------- Coming soon popup ---------- */
+  .soon-card{
+    position:relative;background:var(--paper);color:var(--ink);
+    border-radius:16px;padding:40px 44px;max-width:340px;text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  .soon-card .soon-text{display:block;font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--nopal);}
+  .soon-card .lightbox-close{color:var(--ink);background:rgba(0,0,0,.06);}
+  .soon-card .lightbox-close:hover{background:rgba(0,0,0,.12);}
+
+  /* ---------- Mobile: single-column cards ---------- */
+  @media(max-width:600px){
+    section{padding:48px 0;}
+    .dish-grid,.order-grid,.team-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- PAPEL PICADO BUNTING -->
+<div class="papel" id="papel" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand-mark">
+      <svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-label="Bandera de México">
+        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
+        <circle cx="15" cy="10" r="2.6" fill="none" stroke="#7a5a2e" stroke-width="1.1"/><circle cx="15" cy="10" r="1.1" fill="#5a7a3a"/>
+      </svg>
+      ÓRALE<span class="dot">.</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#order" data-en="Order" data-es="Pedir">Order</a>
+      <a href="#menu" data-en="Menu" data-es="Menú">Menu</a>
+      <a href="#about" data-en="About" data-es="Nosotros">About</a>
+      <a href="#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+      <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langBtn" aria-label="Switch language">ES</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay" hidden></div>
+<aside class="nav-panel" id="navPanel" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nav-panel-head">
+    <button class="nav-panel-close" id="navPanelClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="nav-panel-links">
+    <a href="#order" data-en="Order" data-es="Pedir">Order</a>
+    <a href="#menu" data-en="Menu" data-es="Menú">Menu</a>
+    <a href="#about" data-en="About" data-es="Nosotros">About</a>
+    <a href="#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+    <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  </nav>
+</aside>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="hero-tile" src="img/hero-food.png" alt="" aria-hidden="true">
+  <div class="hero-inner">
+    <span class="eyebrow" data-en="Limerick · Ireland" data-es="Limerick · Irlanda">Limerick · Ireland</span>
+    <h1>ÓRALE<span class="flavor" data-en="Authentic Mexican Flavor" data-es="Auténtico Sabor Mexicano">Authentic Mexican Flavor</span></h1>
+    <p class="hero-sub" data-en="Home-style cooking from across Mexico, made the way it's eaten back home. Our menu rotates so there's always something new to try." data-es="Cocina casera de todo México, hecha como se come allá. Nuestro menú rota para que siempre haya algo nuevo por probar.">Home-style cooking from across Mexico, made the way it's eaten back home. Our menu rotates so there's always something new to try.</p>
+    <a href="#order" class="btn btn-primary" data-en="See where to order" data-es="Dónde pedir">See where to order</a>
+  </div>
+</section>
+
+<div class="divider" id="div1"></div>
+
+<!-- ORDER -->
+<section id="order">
+  <svg class="motif" style="left:-30px;bottom:-20px;width:180px;" viewBox="0 0 100 140" aria-hidden="true">
+    <g fill="#006847">
+      <path d="M48 140 V70 q0-10 10-10 h2 q10 0 10 12 v8 q0 10-10 10 h-2 V140Z"/>
+      <ellipse cx="50" cy="50" rx="22" ry="30"/>
+      <ellipse cx="22" cy="62" rx="11" ry="17" transform="rotate(-28 22 62)"/>
+      <ellipse cx="78" cy="58" rx="11" ry="17" transform="rotate(26 78 58)"/>
+    </g>
+    <g fill="#B22222"><circle cx="50" cy="26" r="5"/><circle cx="40" cy="34" r="3.5"/><circle cx="60" cy="34" r="3.5"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" data-en="Where to find us" data-es="Dónde encontrarnos">Where to find us</span>
+      <h2 class="sec-title" data-en="Order &amp; find us" data-es="Pide y encuéntranos">Order &amp; find us</h2>
+      <p class="sec-intro" data-en="Order online for delivery, message us directly for the weekend run, or come say hola at the markets." data-es="Pide en línea a domicilio, escríbenos para la entrega de fin de semana, o ven a saludarnos a los mercados.">Order online for delivery, message us directly for the weekend run, or come say hola at the markets.</p>
+    </div>
+    <div class="order-grid">
+      <div class="order-card">
+        <span class="tag" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
+        <h3>Uber Eats</h3>
+        <p data-en="Browse the full menu and order for delivery across Limerick." data-es="Explora el menú completo y pide a domicilio en Limerick.">Browse the full menu and order for delivery across Limerick.</p>
+        <a href="#" class="btn btn-primary js-soon" data-en="Open Uber Eats" data-es="Abrir Uber Eats">Open Uber Eats</a>
+      </div>
+      <div class="order-card">
+        <span class="tag" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
+        <h3>Deliveroo</h3>
+        <p data-en="Our full bilingual menu, delivered to your door." data-es="Nuestro menú bilingüe completo, a la puerta de tu casa.">Our full bilingual menu, delivered to your door.</p>
+        <a href="#" class="btn btn-green js-soon" data-en="Open Deliveroo" data-es="Abrir Deliveroo">Open Deliveroo</a>
+      </div>
+      <div class="order-card">
+        <span class="tag" data-en="Weekends" data-es="Fines de semana">Weekends</span>
+        <h3>WhatsApp</h3>
+        <p data-en="Pre-order for our weekend community delivery. Message us to join the list." data-es="Haz tu pre-pedido para la entrega comunitaria de fin de semana. Escríbenos para unirte.">Pre-order for our weekend community delivery. Message us to join the list.</p>
+        <div class="cta-row">
+          <a href="https://wa.me/353899435329" target="_blank" rel="noopener" class="btn btn-out" data-en="+353 89 943 5329" data-es="+353 89 943 5329">+353 89 943 5329</a>
+        </div>
+      </div>
+      <div class="order-card">
+        <span class="tag" data-en="In person" data-es="En persona">In person</span>
+        <h3 data-en="At the markets" data-es="En los mercados">At the markets</h3>
+        <p data-en="Find our stall at local markets around Limerick. Check our social media for the weekly schedule." data-es="Encuentra nuestro puesto en mercados locales de Limerick. Revisa nuestras redes para el horario semanal.">Find our stall at local markets around Limerick. Check our social media for the weekly schedule.</p>
+        <a href="#contact" class="btn btn-out" data-en="See socials" data-es="Ver redes">See socials</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" id="div2"></div>
+
+<!-- MENU -->
+<section id="menu">
+  <svg class="motif" style="right:-25px;top:40px;width:150px;" viewBox="0 0 100 120" aria-hidden="true">
+    <!-- Calavera / sugar skull -->
+    <path d="M50 8 C26 8 14 26 14 46 c0 14 6 22 12 27 v10 c0 5 4 8 8 8 h32 c4 0 8-3 8-8 V73 c6-5 12-13 12-27 C86 26 74 8 50 8Z" fill="#0047AB"/>
+    <circle cx="34" cy="46" r="10" fill="#FBF6EC"/><circle cx="66" cy="46" r="10" fill="#FBF6EC"/>
+    <g fill="#B22222"><circle cx="34" cy="46" r="4"/><circle cx="66" cy="46" r="4"/></g>
+    <g fill="#FFD700"><circle cx="34" cy="33" r="2"/><circle cx="34" cy="59" r="2"/><circle cx="22" cy="46" r="2"/><circle cx="46" cy="46" r="2"/><circle cx="66" cy="33" r="2"/><circle cx="66" cy="59" r="2"/><circle cx="54" cy="46" r="2"/><circle cx="78" cy="46" r="2"/></g>
+    <path d="M50 60 l5 8 -5 4 -5-4 Z" fill="#006847"/>
+    <g stroke="#241712" stroke-width="1.5"><path d="M40 84 v10 M46 84 v10 M52 84 v10 M58 84 v10"/><path d="M37 89 h26"/></g>
+    <g fill="#FFD700"><circle cx="50" cy="20" r="3"/><circle cx="42" cy="24" r="2"/><circle cx="58" cy="24" r="2"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" data-en="The menu" data-es="El menú">The menu</span>
+      <h2 class="sec-title" data-en="What we cook" data-es="Lo que cocinamos">What we cook</h2>
+      <p class="sec-intro" data-en="Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask." data-es="Recetas tradicionales de cada rincón de México. Rotamos el menú por región, así que los platillos cambian a lo largo del año. Los niveles de picante son ajustables — solo pídelo.">Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask.</p>
+      <div class="menu-note">
+        <span class="veg-key"><span class="veg-badge">V</span><span data-en="Vegan option" data-es="Opción vegana">Vegan option</span></span>
+        <span data-en="Prices shown at checkout on each platform." data-es="Los precios se muestran al pagar en cada plataforma.">Prices shown at checkout on each platform.</span>
+        <span data-en="Images are for illustrative purposes only and may not reflect the actual dish." data-es="Las imágenes son ilustrativas y pueden no corresponder al platillo real.">Images are for illustrative purposes only and may not reflect the actual dish.</span>
+      </div>
+    </div>
+    <div id="menuRoot"></div>
+  </div>
+</section>
+
+<div class="divider" id="div3"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <svg class="motif" style="right:-20px;top:30px;width:150px;" viewBox="0 0 100 100" aria-hidden="true">
+    <g fill="#FFD700"><g id="pet"><ellipse cx="50" cy="22" rx="9" ry="16"/></g>
+      <use href="#pet" transform="rotate(45 50 50)"/><use href="#pet" transform="rotate(90 50 50)"/>
+      <use href="#pet" transform="rotate(135 50 50)"/><use href="#pet" transform="rotate(180 50 50)"/>
+      <use href="#pet" transform="rotate(225 50 50)"/><use href="#pet" transform="rotate(270 50 50)"/>
+      <use href="#pet" transform="rotate(315 50 50)"/></g>
+    <circle cx="50" cy="50" r="14" fill="#B22222"/>
+  </svg>
+  <svg class="motif" style="left:-40px;bottom:0;width:130px;" viewBox="0 0 60 120" aria-hidden="true">
+    <g fill="#006847"><rect x="25" y="40" width="10" height="80" rx="5"/>
+      <ellipse cx="14" cy="55" rx="9" ry="20" transform="rotate(-30 14 55)"/>
+      <ellipse cx="46" cy="48" rx="9" ry="20" transform="rotate(30 46 48)"/>
+      <ellipse cx="30" cy="28" rx="9" ry="22"/></g>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" data-en="Who we are" data-es="Quiénes somos">Who we are</span>
+      <h2 class="sec-title" data-en="The people behind Órale" data-es="La gente detrás de Órale">The people behind Órale</h2>
+    </div>
+    <div class="team-grid">
+      <div class="member">
+        <div class="photo-ph"><span data-en="Add photo" data-es="Agregar foto">Add photo</span></div>
+        <div class="member-body">
+          <div class="member-name">Vicente Rodriguez Hernandez</div>
+          <span class="member-role" data-en="Founder, Director &amp; Accountant" data-es="Fundador, Director y Contador">Founder, Director &amp; Accountant</span>
+          <p class="member-bio" data-en="Vicente leads Órale's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from." data-es="Vicente lidera la visión y la dirección de Órale: define la estrategia, las relaciones con proveedores y los estándares que mantienen cada platillo auténticamente mexicano, venga de donde venga del país.">Vicente leads Órale's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from.</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-ph"><span data-en="Add photo" data-es="Agregar foto">Add photo</span></div>
+        <div class="member-body">
+          <div class="member-name">David Enrique Ochoa Diaz</div>
+          <span class="member-role" data-en="Founder · Operations &amp; Compliance Manager · Software Architect &amp; Digital Business Systems Designer" data-es="Fundador · Gerente de Operaciones y Cumplimiento · Arquitecto de Software y Diseñador de Sistemas Digitales de Negocio">Founder · Operations &amp; Compliance Manager · Software Architect &amp; Digital Business Systems Designer</span>
+          <p class="member-bio" data-en="David keeps the day-to-day running smoothly — overseeing service, food safety and compliance, supplier orders and our presence at markets and events. He also builds the digital systems that run the business behind the scenes." data-es="David mantiene la operación diaria en marcha: supervisa el servicio, la seguridad alimentaria y el cumplimiento, los pedidos a proveedores y nuestra presencia en mercados y eventos. También desarrolla los sistemas digitales que hacen funcionar el negocio tras bambalinas.">David keeps the day-to-day running smoothly — overseeing service, food safety and compliance, supplier orders and our presence at markets and events. He also builds the digital systems that run the business behind the scenes.</p>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-ph"><span data-en="Add photo" data-es="Agregar foto">Add photo</span></div>
+        <div class="member-body">
+          <div class="member-name">Aracely Sansores Gongora</div>
+          <span class="member-role" data-en="Founder &amp; Head Chef" data-es="Fundadora y Chef Ejecutiva">Founder &amp; Head Chef</span>
+          <p class="member-bio" data-en="Aracely designs and stands behind every recipe, bringing the authentic flavours of Mexico's regions to each plate with consistency and care." data-es="Aracely diseña y respalda cada receta, llevando los sabores auténticos de las regiones de México a cada plato con consistencia y cuidado.">Aracely designs and stands behind every recipe, bringing the authentic flavours of Mexico's regions to each plate with consistency and care.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="safety-box">
+      <h3 data-en="Allergens &amp; food safety" data-es="Alérgenos y seguridad alimentaria">Allergens &amp; food safety</h3>
+      <p data-en="All 14 statutory allergens are managed in line with Food Safety Authority of Ireland (FSAI) requirements. The allergen tags on each dish are indicative — recipes and suppliers can change, and cross-contamination is possible in our kitchen. Always tell our staff about any allergy before you order." data-es="Los 14 alérgenos de declaración obligatoria se gestionan conforme a los requisitos de la Food Safety Authority of Ireland (FSAI). Las etiquetas de alérgenos de cada platillo son indicativas — las recetas y los proveedores pueden cambiar, y existe posibilidad de contaminación cruzada en nuestra cocina. Informa siempre a nuestro personal de cualquier alergia antes de pedir."><strong>All 14 statutory allergens</strong> are managed in line with Food Safety Authority of Ireland (FSAI) requirements. The allergen tags on each dish are indicative — recipes and suppliers can change, and cross-contamination is possible in our kitchen. Always tell our staff about any allergy before you order.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REFUND POLICY -->
+<section id="refund" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" data-en="Refunds" data-es="Reembolsos">Refunds</span>
+      <h2 class="sec-title" data-en="Refund Policy" data-es="Política de Reembolsos">Refund Policy</h2>
+      <p class="sec-intro" data-en="Because our food is freshly prepared and perishable, orders cannot be returned once they have been handed over. If your order is incorrect, incomplete, or affected by a quality issue, please contact us within 24 hours of purchase and we will review your case. Where appropriate, we will offer a replacement or a refund at our discretion. This is a short summary — the full content of the Refund Policy is contained in the PDF below." data-es="Debido a que nuestra comida se prepara al momento y es perecedera, los pedidos no pueden devolverse una vez entregados. Si tu pedido es incorrecto, está incompleto o presenta un problema de calidad, contáctanos dentro de las 24 horas posteriores a la compra y revisaremos tu caso. Cuando corresponda, ofreceremos un reemplazo o un reembolso a nuestra discreción. Este es un resumen breve — el contenido completo de la Política de Reembolsos se encuentra en el PDF a continuación.">Because our food is freshly prepared and perishable, orders cannot be returned once they have been handed over. If your order is incorrect, incomplete, or affected by a quality issue, please contact us within 24 hours of purchase and we will review your case. Where appropriate, we will offer a replacement or a refund at our discretion. This is a short summary — the full content of the Refund Policy is contained in the PDF below.</p>
+    </div>
+    <a href="Orale_Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:26px;" data-en="Read the full Refund Policy (PDF)" data-es="Leer la Política de Reembolsos completa (PDF)">Read the full Refund Policy (PDF)</a>
+  </div>
+</section>
+
+<!-- REVIEW CTA -->
+<section id="review">
+  <div class="wrap" style="text-align:center;">
+    <span class="sec-eyebrow" data-en="Reviews" data-es="Reseñas">Reviews</span>
+    <h2 class="sec-title" data-en="Enjoyed your meal?" data-es="¿Disfrutaste tu comida?">Enjoyed your meal?</h2>
+    <p class="sec-intro" style="margin-left:auto;margin-right:auto;" data-en="Your review helps our small family business grow. It only takes a minute." data-es="Tu reseña ayuda a crecer a nuestro pequeño negocio familiar. Solo toma un minuto.">Your review helps our small family business grow. It only takes a minute.</p>
+    <a href="https://g.page/r/CZBb8ePc_IHBEBM/review" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:22px;" data-en="⭐ Review us on Google" data-es="⭐ Déjanos una reseña en Google">⭐ Review us on Google</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <svg class="motif" style="right:0;bottom:-10px;width:170px;opacity:.12;" viewBox="0 0 120 120" aria-hidden="true">
+    <!-- Mariachi: sombrero + guitarra -->
+    <g fill="#FFD700">
+      <ellipse cx="48" cy="58" rx="40" ry="9"/>
+      <path d="M30 56 q18-34 36 0 Z"/>
+      <ellipse cx="48" cy="40" rx="13" ry="9"/>
+    </g>
+    <ellipse cx="48" cy="56" rx="40" ry="9" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity=".6"/>
+    <!-- guitarra -->
+    <g transform="rotate(28 92 80)">
+      <ellipse cx="92" cy="86" rx="15" ry="19" fill="#FFD700"/>
+      <circle cx="92" cy="86" r="6" fill="#B22222"/>
+      <rect x="89" y="40" width="6" height="34" rx="2" fill="#FFD700"/>
+      <rect x="86" y="36" width="12" height="7" rx="2" fill="#FFFFFF"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-eyebrow" data-en="Get in touch" data-es="Contáctanos">Get in touch</span>
+      <h2 class="sec-title" data-en="¡Órale, let's talk!" data-es="¡Órale, hablemos!">¡Órale, let's talk!</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="lbl" data-en="Email" data-es="Correo">Email</div>
+        <a href="mailto:orale.mexican.flavor@gmail.com">orale.mexican.flavor@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl" data-en="Phone &amp; WhatsApp" data-es="Teléfono y WhatsApp">Phone &amp; WhatsApp</div>
+        <a href="https://wa.me/353899435329" target="_blank" rel="noopener">+353 89 943 5329</a>
+      </div>
+      <div class="contact-item">
+        <div class="lbl" data-en="Follow us" data-es="Síguenos">Follow us</div>
+        <div class="socials">
+          <!-- EDITAR: pega aquí la URL de Instagram cuando esté lista -->
+          <a href="#" class="js-soon">Instagram</a>
+          <!-- EDITAR: pega aquí la URL de Facebook cuando esté lista -->
+          <a href="#" class="js-soon">Facebook</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="lbl" data-en="Find us on Google" data-es="Búscanos en Google">Find us on Google</div>
+        <!-- EDITAR: pega aquí la URL del Google Business Profile cuando esté lista -->
+        <a href="#" data-en="Google Business Profile" data-es="Perfil de Google Business">Google Business Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg class="flag" width="30" height="20" viewBox="0 0 30 20" aria-label="Bandera de México">
+        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
+        <circle cx="15" cy="10" r="2.8" fill="none" stroke="#7a5a2e" stroke-width="1.2"/><circle cx="15" cy="10" r="1.2" fill="#5a7a3a"/>
+      </svg>
+      <span>Órale – Authentic Mexican Flavor Limited · CRO 805512</span>
+    </div>
+    <div>
+      <a href="Orale_Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
+      &nbsp;·&nbsp; © 2026
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem;line-height:1.6;">
+    <strong style="color:var(--cempasuchil);">📄 <span data-en="License" data-es="Licencia">License</span></strong><br>
+    <span data-en="© 2025 Órale – Authentic Mexican Flavor. All rights reserved. This is a private business project. Unauthorized use is prohibited." data-es="© 2025 Órale – Authentic Mexican Flavor. Todos los derechos reservados. Este es un proyecto de negocio privado. Se prohíbe el uso no autorizado.">© 2025 Órale – Authentic Mexican Flavor. All rights reserved. This is a private business project. Unauthorized use is prohibited.</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- COMING SOON POPUP -->
+<div class="lightbox" id="soonModal" role="dialog" aria-modal="true" aria-hidden="true">
+  <div class="soon-card">
+    <button class="lightbox-close" id="soonClose" aria-label="Close">&times;</button>
+    <span class="soon-text" data-en="Coming soon!" data-es="¡Próximamente!">Coming soon!</span>
+  </div>
+</div>
+
+<script src="dishes-data.js"></script>
+<script>
+/* ---------- Papel picado bunting render ---------- */
+(function(){
+  const colors=["#B22222","#FFD700","#006847","#FFFFFF"];
+  const root=document.getElementById("papel");
+  const n=Math.ceil(window.innerWidth/60)+2;
+  let html="";
+  for(let i=0;i<n;i++){
+    const c=colors[i%colors.length];
+    html+=`<svg width="60" height="42" viewBox="0 0 60 42"><g class="papel-flag" fill="${c}">
+      <path d="M0 0 H60 V20 L30 42 L0 20 Z"/>
+      <circle cx="30" cy="14" r="5" fill="#0047AB"/>
+      <circle cx="15" cy="10" r="2.4" fill="#0047AB"/>
+      <circle cx="45" cy="10" r="2.4" fill="#0047AB"/>
+      <path d="M30 26 l4 4 -4 4 -4 -4 Z" fill="#0047AB"/></g></svg>`;
+  }
+  root.innerHTML=html;
+})();
+
+/* ---------- Talavera divider background ---------- */
+(function(){
+  const tile=`<svg xmlns='http://www.w3.org/2000/svg' width='60' height='30' viewBox='0 0 60 30'>
+    <rect width='60' height='30' fill='%23FBF6EC'/>
+    <circle cx='15' cy='15' r='8' fill='none' stroke='%230047AB' stroke-width='2'/>
+    <circle cx='15' cy='15' r='3' fill='%23B22222'/>
+    <circle cx='45' cy='15' r='8' fill='none' stroke='%23006847' stroke-width='2'/>
+    <circle cx='45' cy='15' r='3' fill='%23FFD700'/>
+    <path d='M0 15 H7 M23 15 H37 M53 15 H60' stroke='%23FFD700' stroke-width='2'/></svg>`;
+  const url=`url("data:image/svg+xml,${tile.replace(/\n/g,'').replace(/#/g,'%23').replace(/%23%23/g,'%23')}")`;
+  document.querySelectorAll('.divider').forEach(d=>{d.style.backgroundImage=url;});
+})();
+
+/* ---------- Menu data ---------- */
+const CATS=[
+  {id:"pozole", en:"Pozole", es:"Pozole"},
+  {id:"chilaquiles", en:"Chilaquiles", es:"Chilaquiles"},
+  {id:"yucatan", en:"Cochinita &amp; Panuchos", es:"Cochinita y Panuchos"},
+  {id:"tamales", en:"Tamales", es:"Tamales"},
+  {id:"tacos", en:"Tacos &amp; Tortas", es:"Tacos y Tortas"},
+  {id:"gorditas", en:"Gorditas &amp; Empanadas", es:"Gorditas y Empanadas"},
+  {id:"mains", en:"Carnitas, Mole &amp; Sides", es:"Carnitas, Mole y Guarniciones"}
+];
+
+let LANG="en";
+
+function renderMenu(){
+  const root=document.getElementById("menuRoot");
+  let html="";
+  const allLabel = LANG==="en" ? "Allergens" : "Alérgenos";
+  const noneLabel = LANG==="en" ? "No statutory allergens declared" : "Sin alérgenos de declaración obligatoria";
+  CATS.forEach(cat=>{
+    const items=DISHES.filter(d=>d.cat===cat.id && d.active!==false);
+    if(!items.length) return;
+    html+=`<div class="menu-cat"><h3 class="menu-cat-title">${cat[LANG]}</h3><div class="dish-grid">`;
+    items.forEach(d=>{
+      const t=d[LANG];
+      const vbadge=d.v?`<span class="v-inline" title="Vegan">V</span>`:"";
+      let chips="";
+      if(d.a.length){
+        chips=`<span class="all-label">${allLabel}:</span>`+d.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
+      }else{
+        chips=`<span class="all-label">${allLabel}:</span><span class="all-none">${noneLabel}</span>`;
+      }
+      const photoLabel = LANG==="en" ? "Photo coming soon" : "Foto próximamente";
+      const seeMoreLabel = LANG==="en" ? "See more" : "Ver más";
+      const largeSrc = d.img ? d.img.replace(/\.webp$/i,"-large.webp") : "";
+      const photo = d.img
+        ? `<div class="dish-photo" style="background:none;padding:0;"><img src="${d.img}" alt="${t.n}" width="${d.imgW}" height="${d.imgH}" loading="lazy" data-large="${largeSrc}" style="width:100%;height:100%;object-fit:cover;"></div>`
+        : `<div class="dish-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9b48f" stroke-width="1.6"><path d="M3 16.5 8 11l4 4 3-3 6 6"/><circle cx="8.5" cy="8" r="1.8"/><rect x="2.5" y="3.5" width="19" height="17" rx="2"/></svg>
+          <span>${photoLabel}</span>
+        </div>`;
+      html+=`<div class="dish">
+        ${photo}
+        <div class="dish-body">
+          <div class="dish-top">
+            <div class="dish-name">${t.n}${vbadge}</div>
+            <div class="dish-price">€ —</div>
+          </div>
+          <p class="dish-desc">${t.d}</p>
+          <div class="dish-allergens">${chips}</div>
+          <a class="dish-more" href="dish.html?id=${d.id}">${seeMoreLabel} →</a>
+        </div>
+      </div>`;
+    });
+    html+=`</div></div>`;
+  });
+  root.innerHTML=html;
+}
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerHTML = LANG==="en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+  });
+  document.getElementById("langBtn").textContent = LANG==="en" ? "ES" : "EN";
+  renderMenu();
+}
+
+document.getElementById("langBtn").addEventListener("click",()=>{
+  LANG = LANG==="en" ? "es" : "en";
+  applyLang();
+});
+
+(function(){
+  const navToggle=document.getElementById("navToggle");
+  const navPanel=document.getElementById("navPanel");
+  const navOverlay=document.getElementById("navOverlay");
+  const navPanelClose=document.getElementById("navPanelClose");
+  let closeTimer=null;
+
+  function trapFocus(e){
+    if(e.key==="Escape"){ closeNavPanel(); return; }
+    if(e.key!=="Tab") return;
+    const focusables=navPanel.querySelectorAll("button, a[href]");
+    if(!focusables.length) return;
+    const first=focusables[0], last=focusables[focusables.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+
+  function openNavPanel(){
+    clearTimeout(closeTimer);
+    navPanel.hidden=false;
+    navOverlay.hidden=false;
+    requestAnimationFrame(()=>{
+      navPanel.classList.add("is-open");
+      navOverlay.classList.add("is-open");
+    });
+    navToggle.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+    navPanelClose.focus();
+    document.addEventListener("keydown",trapFocus);
+  }
+
+  function closeNavPanel(){
+    navPanel.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+    document.removeEventListener("keydown",trapFocus);
+    navToggle.focus();
+    clearTimeout(closeTimer);
+    closeTimer=setTimeout(()=>{
+      navPanel.hidden=true;
+      navOverlay.hidden=true;
+    },300);
+  }
+
+  navToggle.addEventListener("click",()=>{
+    navPanel.classList.contains("is-open") ? closeNavPanel() : openNavPanel();
+  });
+  navPanelClose.addEventListener("click",closeNavPanel);
+  navOverlay.addEventListener("click",closeNavPanel);
+  navPanel.querySelectorAll(".nav-panel-links a").forEach(a=>{
+    a.addEventListener("click",closeNavPanel);
+  });
+  window.addEventListener("resize",()=>{
+    if(window.innerWidth>760 && navPanel.classList.contains("is-open")) closeNavPanel();
+  });
+})();
+
+/* ---------- Dish photo lightbox ---------- */
+(function(){
+  const lightbox=document.getElementById("lightbox");
+  const lightboxImg=document.getElementById("lightboxImg");
+  const lightboxClose=document.getElementById("lightboxClose");
+
+  function openLightbox(src,alt){
+    lightboxImg.src=src;
+    lightboxImg.alt=alt;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+    lightboxClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+    lightboxImg.src="";
+  }
+
+  document.getElementById("menuRoot").addEventListener("click",e=>{
+    const img=e.target.closest(".dish-photo img");
+    if(img) openLightbox(img.dataset.large || img.src, img.alt);
+  });
+  lightboxClose.addEventListener("click",closeLightbox);
+  lightbox.addEventListener("click",e=>{
+    if(e.target===lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+})();
+
+/* ---------- Coming soon popup (Uber Eats / Deliveroo) ---------- */
+(function(){
+  const soonModal=document.getElementById("soonModal");
+  const soonClose=document.getElementById("soonClose");
+
+  function openSoon(){
+    soonModal.classList.add("open");
+    soonModal.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+    soonClose.focus();
+  }
+  function closeSoon(){
+    soonModal.classList.remove("open");
+    soonModal.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+  }
+
+  document.querySelectorAll(".js-soon").forEach(btn=>{
+    btn.addEventListener("click",e=>{
+      e.preventDefault();
+      openSoon();
+    });
+  });
+  soonClose.addEventListener("click",closeSoon);
+  soonModal.addEventListener("click",e=>{
+    if(e.target===soonModal) closeSoon();
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape" && soonModal.classList.contains("open")) closeSoon();
+  });
+})();
+
+applyLang();
+</script>
+</body>
+</html>

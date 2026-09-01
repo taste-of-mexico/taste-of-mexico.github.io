@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Órale – Authentic Mexican Flavor · Limerick</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='10' height='20' fill='%23006847'/%3E%3Crect x='10' width='10' height='20' fill='%23ffffff'/%3E%3Crect x='20' width='10' height='20' fill='%23CE1126'/%3E%3Ccircle cx='15' cy='10' r='3' fill='none' stroke='%237a5a2e' stroke-width='1.3'/%3E%3Ccircle cx='15' cy='10' r='1.3' fill='%235a7a3a'/%3E%3C/svg%3E">
+<meta name="description" content="Dish details from the Órale – Authentic Mexican Flavor menu: cultural background, how to eat it, and a video, in Limerick, Ireland.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --chile:#B22222;
+    --nopal:#006847;
+    --cempasuchil:#FFD700;
+    --talavera:#0047AB;
+    --paper:#FBF6EC;
+    --paper-2:#F4ECDA;
+    --ink:#241712;
+    --ink-soft:#5c4a3e;
+    --line:#e3d6bd;
+    --display:"Fraunces",Georgia,serif;
+    --body:"DM Sans",system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Papel picado signature ---------- */
+  .papel{
+    display:flex;width:100%;height:42px;overflow:hidden;line-height:0;
+    background:var(--talavera);
+  }
+  .papel svg{height:42px;flex:0 0 auto;}
+  .papel-flag{transform-origin:top center;}
+  @media(prefers-reduced-motion:no-preference){
+    .papel-flag{animation:sway 5s ease-in-out infinite;}
+    .papel svg:nth-child(2n) .papel-flag{animation-delay:-1.2s;}
+    .papel svg:nth-child(3n) .papel-flag{animation-delay:-2.4s;}
+  }
+  @keyframes sway{0%,100%{transform:rotate(-1.2deg);}50%{transform:rotate(1.2deg);}}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1140px;margin:0 auto;}
+  .brand-mark{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:1.4rem;letter-spacing:.04em;color:var(--chile);text-decoration:none;}
+  .brand-mark span.dot{color:var(--talavera);}
+  .flag{display:inline-block;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.08);vertical-align:middle;flex:0 0 auto;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--chile);}
+  .lang-toggle{
+    font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
+    border:1.5px solid var(--talavera);color:var(--talavera);background:transparent;
+    padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
+  }
+  .lang-toggle:hover{background:var(--talavera);color:#fff;}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .nav-toggle{
+    display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+    width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;
+    background:transparent;cursor:pointer;padding:0;flex:0 0 auto;
+  }
+  .nav-toggle-bar{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-overlay{
+    position:fixed;inset:0;background:rgba(36,23,18,.45);z-index:60;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .nav-overlay.is-open{opacity:1;pointer-events:auto;}
+  .nav-panel{
+    position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);
+    background:var(--paper);z-index:61;box-shadow:-8px 0 24px rgba(0,0,0,.18);
+    transform:translateX(100%);transition:transform .28s ease;
+    display:flex;flex-direction:column;padding:18px;
+  }
+  .nav-panel.is-open{transform:translateX(0);}
+  .nav-panel-head{display:flex;justify-content:flex-end;margin-bottom:8px;}
+  .nav-panel-close{
+    width:44px;height:44px;border:none;border-radius:50%;
+    background:rgba(0,0,0,.06);color:var(--ink);font-size:1.6rem;line-height:1;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .nav-panel-close:hover{background:rgba(0,0,0,.12);}
+  .nav-panel-links{display:flex;flex-direction:column;gap:2px;}
+  .nav-panel-links a{
+    display:flex;align-items:center;min-height:44px;padding:12px 10px;
+    text-decoration:none;font-size:1rem;font-weight:600;letter-spacing:.02em;
+    color:var(--ink);border-bottom:1px solid var(--line);transition:color .2s;
+  }
+  .nav-panel-links a:hover{color:var(--chile);}
+  .nav-overlay[hidden],.nav-panel[hidden]{display:none;}
+  @media(max-width:760px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;
+    font-size:.92rem;letter-spacing:.02em;padding:14px 22px;border-radius:999px;
+    transition:transform .15s,box-shadow .15s;border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-out{background:transparent;color:var(--talavera);border-color:var(--talavera);}
+  .btn-out:hover{background:var(--talavera);color:#fff;}
+
+  /* ---------- Sections ---------- */
+  section{padding:48px 0 72px;}
+  .sec-eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--talavera);}
+
+  /* ---------- Dish detail ---------- */
+  .dish-detail{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin-top:28px;background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  @media(min-width:760px){
+    .dish-detail{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch;}
+  }
+  .dish-detail-photo{aspect-ratio:16/10;background:
+      repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);
+    display:flex;align-items:center;justify-content:center;position:relative;}
+  .dish-detail-photo svg{width:52px;height:52px;opacity:.5;}
+  .dish-detail-photo span{position:absolute;bottom:10px;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#a8967c;font-weight:700;}
+  .dish-detail-photo img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;}
+  .dish-detail-body{padding:28px 30px 30px;display:flex;flex-direction:column;}
+  .dish-detail-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .dish-detail-name{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.1;}
+  .dish-detail-desc{color:var(--ink-soft);font-size:1.05rem;margin:14px 0 18px;}
+  .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+  .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
+  .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
+  .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
+  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--nopal);color:#fff;font-size:.7rem;font-weight:700;margin-left:8px;vertical-align:middle;}
+  .spice-note{margin-top:18px;font-size:.88rem;color:var(--ink-soft);font-style:italic;}
+
+  .info-block{margin-top:34px;}
+  .info-title{font-size:1.5rem;color:var(--talavera);font-weight:700;margin-bottom:12px;}
+  .info-block p{color:var(--ink-soft);font-size:1.02rem;margin:0;}
+  .review-cta{text-align:center;}
+  .review-cta p{margin-bottom:16px;}
+
+  .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:
+      repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);}
+  .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-placeholder{display:flex;align-items:center;justify-content:center;color:#a8967c;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;text-align:center;padding:20px;}
+
+  .not-found{margin-top:36px;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:44px 34px;text-align:center;}
+  .not-found h2{color:var(--chile);font-size:1.8rem;margin-bottom:12px;}
+  .not-found p{color:var(--ink-soft);margin:0 0 22px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:#1a0f0a;color:#caa;padding:34px 0;font-size:.86rem;}
+  .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;}
+  footer a{color:var(--cempasuchil);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  :focus-visible{outline:3px solid var(--talavera);outline-offset:2px;border-radius:4px;}
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:200;
+    display:flex;align-items:center;justify-content:center;
+    padding:28px;background:rgba(10,6,4,.9);
+    opacity:0;visibility:hidden;transition:opacity .2s ease;
+  }
+  .lightbox.open{opacity:1;visibility:visible;}
+  .lightbox-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute;top:16px;right:16px;width:44px;height:44px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:50%;
+    font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.3);}
+</style>
+</head>
+<body>
+
+<!-- PAPEL PICADO BUNTING -->
+<div class="papel" id="papel" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html#top" class="brand-mark">
+      <svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-label="Bandera de México">
+        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
+        <circle cx="15" cy="10" r="2.6" fill="none" stroke="#7a5a2e" stroke-width="1.1"/><circle cx="15" cy="10" r="1.1" fill="#5a7a3a"/>
+      </svg>
+      ÓRALE<span class="dot">.</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+      <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
+      <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
+      <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+      <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langBtn" aria-label="Switch language">ES</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay" hidden></div>
+<aside class="nav-panel" id="navPanel" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nav-panel-head">
+    <button class="nav-panel-close" id="navPanelClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="nav-panel-links">
+    <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+    <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
+    <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
+    <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+    <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  </nav>
+</aside>
+
+<!-- DISH DETAIL -->
+<section id="dishTop">
+  <div class="wrap">
+    <a class="btn btn-out" href="index.html#menu" data-en="← Back to menu" data-es="← Volver al menú">← Back to menu</a>
+    <div id="dishRoot"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <svg class="flag" width="30" height="20" viewBox="0 0 30 20" aria-label="Bandera de México">
+        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
+        <circle cx="15" cy="10" r="2.8" fill="none" stroke="#7a5a2e" stroke-width="1.2"/><circle cx="15" cy="10" r="1.2" fill="#5a7a3a"/>
+      </svg>
+      <span>Órale – Authentic Mexican Flavor Limited · CRO 805512</span>
+    </div>
+    <div>
+      <a href="Orale_Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
+      &nbsp;·&nbsp; © 2026
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<script src="dishes-data.js"></script>
+<script>
+/* ---------- Papel picado bunting render ---------- */
+(function(){
+  const colors=["#B22222","#FFD700","#006847","#FFFFFF"];
+  const root=document.getElementById("papel");
+  const n=Math.ceil(window.innerWidth/60)+2;
+  let html="";
+  for(let i=0;i<n;i++){
+    const c=colors[i%colors.length];
+    html+=`<svg width="60" height="42" viewBox="0 0 60 42"><g class="papel-flag" fill="${c}">
+      <path d="M0 0 H60 V20 L30 42 L0 20 Z"/>
+      <circle cx="30" cy="14" r="5" fill="#0047AB"/>
+      <circle cx="15" cy="10" r="2.4" fill="#0047AB"/>
+      <circle cx="45" cy="10" r="2.4" fill="#0047AB"/>
+      <path d="M30 26 l4 4 -4 4 -4 -4 Z" fill="#0047AB"/></g></svg>`;
+  }
+  root.innerHTML=html;
+})();
+
+let LANG="en";
+const params=new URLSearchParams(location.search);
+const dishId=params.get("id");
+const DISH=DISHES.find(d=>d.id===dishId);
+
+function renderDish(){
+  const root=document.getElementById("dishRoot");
+
+  if(!DISH){
+    const title = LANG==="en" ? "Dish not found" : "Platillo no encontrado";
+    const msg = LANG==="en"
+      ? "We couldn't find that dish. It may have rotated off the current menu."
+      : "No pudimos encontrar ese platillo. Puede que ya no esté en el menú actual.";
+    root.innerHTML=`<div class="not-found"><h2>${title}</h2><p>${msg}</p></div>`;
+    document.title = LANG==="en" ? "Dish not found · Órale" : "Platillo no encontrado · Órale";
+    return;
+  }
+
+  if(DISH.active===false){
+    const title = LANG==="en" ? "Not available" : "No disponible";
+    const msg = LANG==="en"
+      ? "This dish isn't available right now."
+      : "Este platillo no está disponible por ahora.";
+    const backLabel = LANG==="en" ? "Back to menu" : "Volver al menú";
+    root.innerHTML=`<div class="not-found"><h2>${title}</h2><p>${msg}</p><a class="btn btn-out" href="index.html#menu">${backLabel}</a></div>`;
+    document.title = LANG==="en" ? "Not available · Órale" : "No disponible · Órale";
+    return;
+  }
+
+  const t=DISH[LANG];
+  document.title = `${t.n} · Órale`;
+
+  const allLabel = LANG==="en" ? "Allergens" : "Alérgenos";
+  const noneLabel = LANG==="en" ? "No statutory allergens declared" : "Sin alérgenos de declaración obligatoria";
+  const vbadge = DISH.v ? `<span class="v-inline" title="Vegan">V</span>` : "";
+  let chips="";
+  if(DISH.a.length){
+    chips=`<span class="all-label">${allLabel}:</span>`+DISH.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
+  }else{
+    chips=`<span class="all-label">${allLabel}:</span><span class="all-none">${noneLabel}</span>`;
+  }
+
+  const photoLabel = LANG==="en" ? "Photo coming soon" : "Foto próximamente";
+  const largeSrc = DISH.img ? DISH.img.replace(/\.webp$/i,"-large.webp") : "";
+  const photo = DISH.img
+    ? `<div class="dish-detail-photo"><img src="${DISH.img}" alt="${t.n}" width="${DISH.imgW}" height="${DISH.imgH}" loading="lazy" data-large="${largeSrc}"></div>`
+    : `<div class="dish-detail-photo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9b48f" stroke-width="1.6"><path d="M3 16.5 8 11l4 4 3-3 6 6"/><circle cx="8.5" cy="8" r="1.8"/><rect x="2.5" y="3.5" width="19" height="17" rx="2"/></svg>
+        <span>${photoLabel}</span>
+      </div>`;
+
+  const spiceNote = LANG==="en" ? "Spice level is adjustable — just ask." : "El nivel de picante es ajustable — solo pídelo.";
+  const aboutTitle = LANG==="en" ? "About this dish" : "Sobre este platillo";
+  const craftTitle = LANG==="en" ? "Made with care" : "Hecho con dedicación";
+  const howTitle = LANG==="en" ? "How to eat it" : "Cómo se come";
+  const videoTitle = LANG==="en" ? "Watch" : "Video";
+  const videoComingSoon = LANG==="en" ? "Video coming soon" : "Video próximamente";
+  const reviewPrompt = LANG==="en" ? "Tried this dish? Leave us a review on Google." : "¿Probaste este platillo? Déjanos una reseña en Google.";
+  const reviewBtnLabel = LANG==="en" ? "⭐ Review us on Google" : "⭐ Déjanos una reseña en Google";
+
+  const videoHtml = DISH.video
+    ? `<div class="video-wrap"><iframe src="https://www.youtube.com/embed/${DISH.video}" title="${t.n}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>`
+    : `<div class="video-wrap video-placeholder"><span>${videoComingSoon}</span></div>`;
+
+  root.innerHTML=`
+    <div class="dish-detail">
+      ${photo}
+      <div class="dish-detail-body">
+        <div class="dish-detail-top">
+          <div class="dish-detail-name">${t.n}${vbadge}</div>
+        </div>
+        <p class="dish-detail-desc">${t.d}</p>
+        <div class="dish-allergens">${chips}</div>
+        <p class="spice-note">${spiceNote}</p>
+      </div>
+    </div>
+    <div class="info-block">
+      <h2 class="info-title">${aboutTitle}</h2>
+      <p>${DISH.culture[LANG]}</p>
+    </div>
+    <div class="info-block">
+      <h2 class="info-title">${craftTitle}</h2>
+      <p>${DISH.craft[LANG]}</p>
+    </div>
+    <div class="info-block">
+      <h2 class="info-title">${howTitle}</h2>
+      <p>${DISH.howToEat[LANG]}</p>
+    </div>
+    <div class="info-block">
+      <h2 class="info-title">${videoTitle}</h2>
+      ${videoHtml}
+    </div>
+    <div class="info-block review-cta">
+      <p>${reviewPrompt}</p>
+      <a href="https://g.page/r/CZBb8ePc_IHBEBM/review" target="_blank" rel="noopener" class="btn btn-primary">${reviewBtnLabel}</a>
+    </div>
+  `;
+}
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerHTML = LANG==="en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+  });
+  document.getElementById("langBtn").textContent = LANG==="en" ? "ES" : "EN";
+  renderDish();
+}
+
+document.getElementById("langBtn").addEventListener("click",()=>{
+  LANG = LANG==="en" ? "es" : "en";
+  applyLang();
+});
+
+(function(){
+  const navToggle=document.getElementById("navToggle");
+  const navPanel=document.getElementById("navPanel");
+  const navOverlay=document.getElementById("navOverlay");
+  const navPanelClose=document.getElementById("navPanelClose");
+  let closeTimer=null;
+
+  function trapFocus(e){
+    if(e.key==="Escape"){ closeNavPanel(); return; }
+    if(e.key!=="Tab") return;
+    const focusables=navPanel.querySelectorAll("button, a[href]");
+    if(!focusables.length) return;
+    const first=focusables[0], last=focusables[focusables.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+
+  function openNavPanel(){
+    clearTimeout(closeTimer);
+    navPanel.hidden=false;
+    navOverlay.hidden=false;
+    requestAnimationFrame(()=>{
+      navPanel.classList.add("is-open");
+      navOverlay.classList.add("is-open");
+    });
+    navToggle.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+    navPanelClose.focus();
+    document.addEventListener("keydown",trapFocus);
+  }
+
+  function closeNavPanel(){
+    navPanel.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+    document.removeEventListener("keydown",trapFocus);
+    navToggle.focus();
+    clearTimeout(closeTimer);
+    closeTimer=setTimeout(()=>{
+      navPanel.hidden=true;
+      navOverlay.hidden=true;
+    },300);
+  }
+
+  navToggle.addEventListener("click",()=>{
+    navPanel.classList.contains("is-open") ? closeNavPanel() : openNavPanel();
+  });
+  navPanelClose.addEventListener("click",closeNavPanel);
+  navOverlay.addEventListener("click",closeNavPanel);
+  navPanel.querySelectorAll(".nav-panel-links a").forEach(a=>{
+    a.addEventListener("click",closeNavPanel);
+  });
+  window.addEventListener("resize",()=>{
+    if(window.innerWidth>760 && navPanel.classList.contains("is-open")) closeNavPanel();
+  });
+})();
+
+/* ---------- Dish photo lightbox ---------- */
+(function(){
+  const lightbox=document.getElementById("lightbox");
+  const lightboxImg=document.getElementById("lightboxImg");
+  const lightboxClose=document.getElementById("lightboxClose");
+
+  function openLightbox(src,alt){
+    lightboxImg.src=src;
+    lightboxImg.alt=alt;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+    lightboxClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+    lightboxImg.src="";
+  }
+
+  document.getElementById("dishRoot").addEventListener("click",e=>{
+    const img=e.target.closest(".dish-detail-photo img");
+    if(img) openLightbox(img.dataset.large || img.src, img.alt);
+  });
+  lightboxClose.addEventListener("click",closeLightbox);
+  lightbox.addEventListener("click",e=>{
+    if(e.target===lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+})();
+
+applyLang();
+</script>
+</body>
+</html>
