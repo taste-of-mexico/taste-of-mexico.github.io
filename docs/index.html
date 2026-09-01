@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Órale – Authentic Mexican Flavor · Limerick</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 20'%3E%3Crect width='10' height='20' fill='%23006847'/%3E%3Crect x='10' width='10' height='20' fill='%23ffffff'/%3E%3Crect x='20' width='10' height='20' fill='%23CE1126'/%3E%3Ccircle cx='15' cy='10' r='3' fill='none' stroke='%237a5a2e' stroke-width='1.3'/%3E%3Ccircle cx='15' cy='10' r='1.3' fill='%235a7a3a'/%3E%3C/svg%3E">
+<title>Taste of Mexico · Limerick</title>
+<link rel="icon" type="image/x-icon" href="assets/logo/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon/apple-touch-icon.png">
 <meta name="description" content="Authentic home-style Mexican food from across the country, with a rotating menu of regional dishes. Pozole, cochinita pibil, tamales and more. Order in Limerick via Uber Eats, Deliveroo and WhatsApp.">
 
 <!-- Schema.org for local SEO -->
@@ -12,7 +15,7 @@
 {
   "@context": "https://schema.org",
   "@type": "FoodEstablishment",
-  "name": "Órale – Authentic Mexican Flavor",
+  "name": "Taste of Mexico",
   "servesCuisine": "Mexican",
   "email": "orale.mexican.flavor@gmail.com",
   "telephone": "+353 89 961 0776",
@@ -27,13 +30,14 @@
 
 <style>
   :root{
-    --chile:#B22222;
-    --nopal:#006847;
-    --cempasuchil:#FFD700;
-    --talavera:#0047AB;
-    --paper:#FBF6EC;
+    --color-primary:#C1592E;
+    --color-chile-red:#B22222;
+    --color-nopal-green:#006847;
+    --color-cempasuchil-yellow:#FFD700;
+    --color-talavera-blue:#0047AB;
+    --color-cream:#FBF6EC;
+    --color-molcajete-brown:#3C2418;
     --paper-2:#F4ECDA;
-    --ink:#241712;
     --ink-soft:#5c4a3e;
     --line:#e3d6bd;
     --display:"Fraunces",Georgia,serif;
@@ -44,8 +48,8 @@
   html{scroll-behavior:smooth;}
   body{
     margin:0;
-    background:var(--paper);
-    color:var(--ink);
+    background:var(--color-cream);
+    color:var(--color-molcajete-brown);
     font-family:var(--body);
     font-size:17px;
     line-height:1.6;
@@ -59,7 +63,7 @@
   /* ---------- Papel picado signature ---------- */
   .papel{
     display:flex;width:100%;height:42px;overflow:hidden;line-height:0;
-    background:var(--talavera);
+    background:var(--color-talavera-blue);
   }
   .papel svg{height:42px;flex:0 0 auto;}
   .papel-flag{transform-origin:top center;}
@@ -77,26 +81,37 @@
     backdrop-filter:blur(8px);
     border-bottom:1px solid var(--line);
   }
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;max-width:1140px;margin:0 auto;}
-  .brand-mark{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:900;font-size:1.4rem;letter-spacing:.04em;color:var(--chile);text-decoration:none;}
-  .brand-mark span.dot{color:var(--talavera);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;max-width:1140px;margin:0 auto;}
+  .brand-mark{display:inline-flex;align-items:center;gap:5px;font-family:var(--display);font-weight:900;font-size:1.4rem;letter-spacing:.02em;color:var(--color-primary);text-decoration:none;}
+  .brand-mark span.dot{color:var(--color-talavera-blue);}
+  .brand-logo{height:68px;width:auto;flex:0 0 auto;}
+  @media(max-width:480px){
+    .nav-inner{padding:10px 16px;gap:8px;}
+    .brand-mark{gap:4px;font-size:1.05rem;}
+    .brand-logo{height:48px;}
+    .nav-actions{gap:6px;}
+  }
+  @media(max-width:360px){
+    .brand-mark{font-size:.85rem;}
+    .brand-logo{height:44px;}
+  }
   .flag{display:inline-block;border-radius:3px;overflow:hidden;box-shadow:0 0 0 1px rgba(0,0,0,.08);vertical-align:middle;flex:0 0 auto;}
   .nav-links{display:flex;align-items:center;gap:26px;}
   .nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s;}
-  .nav-links a:hover{color:var(--chile);}
+  .nav-links a:hover{color:var(--color-primary);}
   .lang-toggle{
     font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
-    border:1.5px solid var(--talavera);color:var(--talavera);background:transparent;
+    border:1.5px solid var(--color-talavera-blue);color:var(--color-talavera-blue);background:transparent;
     padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
   }
-  .lang-toggle:hover{background:var(--talavera);color:#fff;}
+  .lang-toggle:hover{background:var(--color-talavera-blue);color:#fff;}
   .nav-actions{display:flex;align-items:center;gap:10px;}
   .nav-toggle{
     display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
     width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;
     background:transparent;cursor:pointer;padding:0;flex:0 0 auto;
   }
-  .nav-toggle-bar{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s;}
+  .nav-toggle-bar{display:block;width:20px;height:2px;background:var(--color-molcajete-brown);border-radius:2px;transition:transform .2s,opacity .2s;}
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0;}
   .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
@@ -107,7 +122,7 @@
   .nav-overlay.is-open{opacity:1;pointer-events:auto;}
   .nav-panel{
     position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);
-    background:var(--paper);z-index:61;box-shadow:-8px 0 24px rgba(0,0,0,.18);
+    background:var(--color-cream);z-index:61;box-shadow:-8px 0 24px rgba(0,0,0,.18);
     transform:translateX(100%);transition:transform .28s ease;
     display:flex;flex-direction:column;padding:18px;
   }
@@ -115,7 +130,7 @@
   .nav-panel-head{display:flex;justify-content:flex-end;margin-bottom:8px;}
   .nav-panel-close{
     width:44px;height:44px;border:none;border-radius:50%;
-    background:rgba(0,0,0,.06);color:var(--ink);font-size:1.6rem;line-height:1;
+    background:rgba(0,0,0,.06);color:var(--color-molcajete-brown);font-size:1.6rem;line-height:1;
     cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
   }
   .nav-panel-close:hover{background:rgba(0,0,0,.12);}
@@ -123,9 +138,9 @@
   .nav-panel-links a{
     display:flex;align-items:center;min-height:44px;padding:12px 10px;
     text-decoration:none;font-size:1rem;font-weight:600;letter-spacing:.02em;
-    color:var(--ink);border-bottom:1px solid var(--line);transition:color .2s;
+    color:var(--color-molcajete-brown);border-bottom:1px solid var(--line);transition:color .2s;
   }
-  .nav-panel-links a:hover{color:var(--chile);}
+  .nav-panel-links a:hover{color:var(--color-primary);}
   .nav-overlay[hidden],.nav-panel[hidden]{display:none;}
   @media(max-width:760px){
     .nav-links{display:none;}
@@ -133,15 +148,15 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero{position:relative;overflow:hidden;background:var(--paper);}
+  .hero{position:relative;overflow:hidden;background:var(--color-cream);padding-top:0;padding-bottom:0;}
   .hero-inner{max-width:1140px;margin:0 auto;padding:74px 24px 64px;position:relative;z-index:2;}
-  .eyebrow{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--nopal);margin-bottom:20px;}
+  .eyebrow{display:inline-block;font-weight:700;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--color-nopal-green);margin-bottom:20px;}
   .hero h1{
     font-size:clamp(3.4rem,11vw,7.2rem);
-    font-weight:900;letter-spacing:.02em;color:var(--chile);
+    font-weight:900;letter-spacing:.02em;color:var(--color-primary);
     line-height:.92;margin-bottom:8px;
   }
-  .hero h1 .flavor{display:block;color:var(--talavera);font-size:clamp(1.4rem,4.4vw,2.6rem);font-weight:600;font-style:italic;letter-spacing:.06em;margin-top:10px;}
+  .hero h1 .flavor{display:block;color:var(--color-talavera-blue);font-size:clamp(1.4rem,4.4vw,2.6rem);font-weight:600;font-style:italic;letter-spacing:.06em;margin-top:10px;}
   .hero-sub{max-width:560px;font-size:1.2rem;color:var(--ink-soft);margin:26px 0 34px;}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px;}
   .btn{
@@ -150,13 +165,13 @@
     transition:transform .15s,box-shadow .15s;border:2px solid transparent;
   }
   .btn:hover{transform:translateY(-2px);}
-  .btn-primary{background:var(--chile);color:#fff;box-shadow:0 6px 0 #7d1818;}
-  .btn-primary:hover{box-shadow:0 8px 0 #7d1818;}
-  .btn-green{background:var(--nopal);color:#fff;box-shadow:0 6px 0 #00472f;}
+  .btn-primary{background:var(--color-primary);color:#fff;box-shadow:0 6px 0 #873e20;}
+  .btn-primary:hover{box-shadow:0 8px 0 #873e20;}
+  .btn-green{background:var(--color-nopal-green);color:#fff;box-shadow:0 6px 0 #00472f;}
   .btn-green:hover{box-shadow:0 8px 0 #00472f;}
-  .btn-out{background:transparent;color:var(--talavera);border-color:var(--talavera);}
-  .btn-out:hover{background:var(--talavera);color:#fff;}
-  .hero-tile{position:absolute;right:30px;top:50%;transform:translateY(-50%);width:min(420px,40vw);height:auto;z-index:1;}
+  .btn-out{background:transparent;color:var(--color-talavera-blue);border-color:var(--color-talavera-blue);}
+  .btn-out:hover{background:var(--color-talavera-blue);color:#fff;}
+  .hero-tile{position:absolute;right:24px;top:calc(129.97px + clamp(3.4rem,11vw,7.2rem) * .92);width:min(380px,36vw);height:auto;}
   @media(max-width:760px){.hero-tile{display:none;}}
 
   /* ---------- Talavera divider ---------- */
@@ -165,27 +180,27 @@
   /* ---------- Sections ---------- */
   section{padding:72px 0;}
   .sec-head{margin-bottom:14px;}
-  .sec-eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--talavera);}
-  .sec-title{font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--ink);margin:8px 0 0;}
+  .sec-eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-talavera-blue);}
+  .sec-title{font-size:clamp(2rem,5vw,3rem);font-weight:700;color:var(--color-molcajete-brown);margin:8px 0 0;}
   .sec-intro{max-width:620px;color:var(--ink-soft);margin-top:16px;font-size:1.08rem;}
 
   /* ---------- Order section ---------- */
   #order{background:var(--paper-2);}
   .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:40px;}
-  .order-card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;}
-  .order-card h3{font-size:1.35rem;margin-bottom:8px;color:var(--chile);}
+  .order-card{background:var(--color-cream);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;}
+  .order-card h3{font-size:1.35rem;margin-bottom:8px;color:var(--color-chile-red);}
   .order-card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 22px;flex:1;}
-  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--cempasuchil);color:#5a4500;margin-bottom:14px;width:fit-content;}
+  .tag{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--color-cempasuchil-yellow);color:#5a4500;margin-bottom:14px;width:fit-content;}
 
   /* ---------- Menu ---------- */
   .menu-note{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:30px;font-size:.9rem;color:var(--ink-soft);}
   .veg-key{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
-  .veg-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--nopal);color:#fff;font-size:.72rem;font-weight:700;}
+  .veg-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-nopal-green);color:#fff;font-size:.72rem;font-weight:700;}
   .menu-cat{margin-top:54px;}
-  .menu-cat-title{font-size:1.6rem;color:var(--talavera);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
-  .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--cempasuchil) 0 8px,transparent 8px 16px);}
+  .menu-cat-title{font-size:1.6rem;color:var(--color-talavera-blue);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--color-cempasuchil-yellow) 0 8px,transparent 8px 16px);}
   .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;}
-  .dish{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+  .dish{background:var(--color-cream);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
   .dish-photo{aspect-ratio:16/10;background:
       repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);
     display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line);}
@@ -198,26 +213,26 @@
   .dish-price{font-weight:700;color:var(--ink-soft);white-space:nowrap;border:1.5px dashed var(--line);border-radius:8px;padding:3px 10px;font-size:.86rem;}
   .dish-desc{color:var(--ink-soft);font-size:.95rem;margin:10px 0 14px;flex:1;}
   .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
-  .dish-more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--talavera);text-decoration:none;}
+  .dish-more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--color-talavera-blue);text-decoration:none;}
   .dish-more:hover{text-decoration:underline;}
   .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
   .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
   .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
-  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--nopal);color:#fff;font-size:.66rem;font-weight:700;margin-left:8px;vertical-align:middle;}
+  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--color-nopal-green);color:#fff;font-size:.66rem;font-weight:700;margin-left:8px;vertical-align:middle;}
 
   /* ---------- About ---------- */
   #about{background:var(--paper-2);}
   .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:44px;}
-  .member{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:center;}
+  .member{background:var(--color-cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:center;}
   .photo-ph{aspect-ratio:1/1;background:
       radial-gradient(circle at 50% 38%,#fff 0 28%,transparent 28%),
-      linear-gradient(135deg,var(--talavera),var(--nopal));
+      linear-gradient(135deg,var(--color-talavera-blue),var(--color-nopal-green));
     display:flex;align-items:flex-end;justify-content:center;position:relative;}
   .photo-ph::before{content:"";position:absolute;bottom:0;width:60%;height:34%;background:#fff;border-radius:50% 50% 0 0;opacity:.92;}
   .photo-ph span{position:relative;z-index:2;margin-bottom:18px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:700;background:rgba(0,0,0,.28);padding:5px 12px;border-radius:999px;}
   .member-body{padding:24px 22px 28px;}
   .member-name{font-family:var(--display);font-weight:700;font-size:1.3rem;}
-  .member-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--chile);margin:8px 0 14px;line-height:1.5;}
+  .member-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-chile-red);margin:8px 0 14px;line-height:1.5;}
   .member-bio{color:var(--ink-soft);font-size:.96rem;}
 
   /* ---------- Decorative Mexican motifs (subtle, behind content) ---------- */
@@ -227,29 +242,30 @@
   .order-grid,.team-grid{position:relative;z-index:1;}
 
   /* ---------- Allergen / safety ---------- */
-  .safety-box{margin-top:36px;background:var(--talavera);color:#fff;border-radius:20px;padding:38px 34px;display:grid;grid-template-columns:1fr;gap:14px;}
+  .safety-box{margin-top:36px;background:var(--color-talavera-blue);color:#fff;border-radius:20px;padding:38px 34px;display:grid;grid-template-columns:1fr;gap:14px;}
   .safety-box h3{color:#fff;font-size:1.5rem;}
   .safety-box p{margin:0;color:rgba(255,255,255,.9);font-size:1.02rem;}
-  .safety-box strong{color:var(--cempasuchil);}
+  .safety-box strong{color:var(--color-cempasuchil-yellow);}
 
   /* ---------- Contact ---------- */
-  #contact{background:var(--chile);color:#fff;}
-  #contact .sec-eyebrow{color:var(--cempasuchil);}
+  #contact{background:var(--color-primary);color:#fff;}
+  #contact .sec-eyebrow{color:var(--color-cempasuchil-yellow);}
   #contact .sec-title{color:#fff;}
   .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:38px;}
-  .contact-item .lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--cempasuchil);margin-bottom:6px;}
+  .contact-item .lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--color-cempasuchil-yellow);margin-bottom:6px;}
   .contact-item a,.contact-item p{color:#fff;text-decoration:none;font-size:1.08rem;margin:0;font-weight:500;}
   .contact-item a:hover{text-decoration:underline;}
   .socials{display:flex;gap:14px;margin-top:6px;}
-  .socials a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--cempasuchil);}
+  .socials a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--color-cempasuchil-yellow);}
 
   /* ---------- Footer ---------- */
   footer{background:#1a0f0a;color:#caa;padding:34px 0;font-size:.86rem;}
   .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;}
-  footer a{color:var(--cempasuchil);text-decoration:none;}
+  .footer-logo{height:32px;width:auto;flex:0 0 auto;border-radius:50%;}
+  footer a{color:var(--color-cempasuchil-yellow);text-decoration:none;}
   footer a:hover{text-decoration:underline;}
 
-  :focus-visible{outline:3px solid var(--talavera);outline-offset:2px;border-radius:4px;}
+  :focus-visible{outline:3px solid var(--color-talavera-blue);outline-offset:2px;border-radius:4px;}
 
   /* ---------- Lightbox ---------- */
   .lightbox{
@@ -270,12 +286,12 @@
 
   /* ---------- Coming soon popup ---------- */
   .soon-card{
-    position:relative;background:var(--paper);color:var(--ink);
+    position:relative;background:var(--color-cream);color:var(--color-molcajete-brown);
     border-radius:16px;padding:40px 44px;max-width:340px;text-align:center;
     box-shadow:0 20px 60px rgba(0,0,0,.5);
   }
-  .soon-card .soon-text{display:block;font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--nopal);}
-  .soon-card .lightbox-close{color:var(--ink);background:rgba(0,0,0,.06);}
+  .soon-card .soon-text{display:block;font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--color-nopal-green);}
+  .soon-card .lightbox-close{color:var(--color-molcajete-brown);background:rgba(0,0,0,.06);}
   .soon-card .lightbox-close:hover{background:rgba(0,0,0,.12);}
 
   /* ---------- Mobile: single-column cards ---------- */
@@ -294,11 +310,8 @@
 <header class="nav">
   <div class="nav-inner">
     <a href="#top" class="brand-mark">
-      <svg class="flag" width="26" height="17" viewBox="0 0 30 20" aria-label="Bandera de México">
-        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
-        <circle cx="15" cy="10" r="2.6" fill="none" stroke="#7a5a2e" stroke-width="1.1"/><circle cx="15" cy="10" r="1.1" fill="#5a7a3a"/>
-      </svg>
-      ÓRALE<span class="dot">.</span>
+      <img class="brand-logo" src="assets/logo/escudo_fondo_transparente-icon.png" alt="Taste of Mexico logo" width="68" height="68">
+      TASTE OF MEXICO<span class="dot">.</span>
     </a>
     <nav class="nav-links">
       <a href="#order" data-en="Order" data-es="Pedir">Order</a>
@@ -333,12 +346,12 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <img class="hero-tile" src="img/hero-food.png" alt="" aria-hidden="true">
   <div class="hero-inner">
     <span class="eyebrow" data-en="Limerick · Ireland" data-es="Limerick · Irlanda">Limerick · Ireland</span>
-    <h1>ÓRALE<span class="flavor" data-en="Authentic Mexican Flavor" data-es="Auténtico Sabor Mexicano">Authentic Mexican Flavor</span></h1>
+    <h1>TASTE OF MEXICO<span class="flavor" data-en="Traditional Mexican Food" data-es="Comida Mexicana Tradicional">Traditional Mexican Food</span></h1>
     <p class="hero-sub" data-en="Home-style cooking from across Mexico, made the way it's eaten back home. Our menu rotates so there's always something new to try." data-es="Cocina casera de todo México, hecha como se come allá. Nuestro menú rota para que siempre haya algo nuevo por probar.">Home-style cooking from across Mexico, made the way it's eaten back home. Our menu rotates so there's always something new to try.</p>
     <a href="#order" class="btn btn-primary" data-en="See where to order" data-es="Dónde pedir">See where to order</a>
+    <img class="hero-tile" src="assets/logo/escudo_fondo_transparente.png" alt="" aria-hidden="true">
   </div>
 </section>
 
@@ -442,7 +455,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-eyebrow" data-en="Who we are" data-es="Quiénes somos">Who we are</span>
-      <h2 class="sec-title" data-en="The people behind Órale" data-es="La gente detrás de Órale">The people behind Órale</h2>
+      <h2 class="sec-title" data-en="The people behind Taste of Mexico" data-es="La gente detrás de Taste of Mexico">The people behind Taste of Mexico</h2>
     </div>
     <div class="team-grid">
       <div class="member">
@@ -450,7 +463,7 @@
         <div class="member-body">
           <div class="member-name">Vicente Rodriguez Hernandez</div>
           <span class="member-role" data-en="Founder, Director &amp; Accountant" data-es="Fundador, Director y Contador">Founder, Director &amp; Accountant</span>
-          <p class="member-bio" data-en="Vicente leads Órale's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from." data-es="Vicente lidera la visión y la dirección de Órale: define la estrategia, las relaciones con proveedores y los estándares que mantienen cada platillo auténticamente mexicano, venga de donde venga del país.">Vicente leads Órale's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from.</p>
+          <p class="member-bio" data-en="Vicente leads Taste of Mexico's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from." data-es="Vicente lidera la visión y la dirección de Taste of Mexico: define la estrategia, las relaciones con proveedores y los estándares que mantienen cada platillo auténticamente mexicano, venga de donde venga del país.">Vicente leads Taste of Mexico's vision and direction — shaping business strategy, supplier relationships and the standards that keep every dish authentically Mexican, wherever in the country it comes from.</p>
         </div>
       </div>
       <div class="member">
@@ -521,7 +534,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-eyebrow" data-en="Get in touch" data-es="Contáctanos">Get in touch</span>
-      <h2 class="sec-title" data-en="¡Órale, let's talk!" data-es="¡Órale, hablemos!">¡Órale, let's talk!</h2>
+      <h2 class="sec-title" data-en="Taste of Mexico, let's talk!" data-es="Taste of Mexico, hablemos!">Taste of Mexico, let's talk!</h2>
     </div>
     <div class="contact-grid">
       <div class="contact-item">
@@ -543,8 +556,7 @@
       </div>
       <div class="contact-item">
         <div class="lbl" data-en="Find us on Google" data-es="Búscanos en Google">Find us on Google</div>
-        <!-- EDITAR: pega aquí la URL del Google Business Profile cuando esté lista -->
-        <a href="#" data-en="Google Business Profile" data-es="Perfil de Google Business">Google Business Profile</a>
+        <a href="https://www.google.com/search?q=ORALE+-+AUTHENTIC+MEXICAN+FLAVOR&amp;stick=H4sIAAAAAAAA_-NgU1I1qLBIskxKMk-2NDBNNjM1SzK2MqhINrQwTEtOSU41TjM0TbI0WMSq4B_k6OOqoKvgGBri4eoX4ums4Osa4ens6Kfg5uMY5h8EAK_aCbpMAAAA&amp;hl=en-GB&amp;mat=CUOgYYoWH2LDElcBa0lj_6ezXLxOUcEm8lzg3k7FziWfraxJ6zqluFiI55korEtY-AJlUi6HOD7NsV3X2aruoQOnHuqOfgsx1cXvx5eK-_NY-_r0jZ9mFQs0UOymPJ0dgkA&amp;authuser=0&amp;ved=2ahUKEwi7iq7gyM6WAxX8VUEAHQaUIZ0Q-MgIegQIFBAb" target="_blank" rel="noopener noreferrer" data-en="Google Business Profile" data-es="Perfil de Google Business">Google Business Profile</a>
       </div>
     </div>
   </div>
@@ -553,10 +565,7 @@
 <footer>
   <div class="wrap foot-inner">
     <div style="display:flex;align-items:center;gap:10px;">
-      <svg class="flag" width="30" height="20" viewBox="0 0 30 20" aria-label="Bandera de México">
-        <rect width="10" height="20" fill="#006847"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#CE1126"/>
-        <circle cx="15" cy="10" r="2.8" fill="none" stroke="#7a5a2e" stroke-width="1.2"/><circle cx="15" cy="10" r="1.2" fill="#5a7a3a"/>
-      </svg>
+      <img class="footer-logo" src="assets/logo/escudo_fondo_transparente-icon.png" alt="Taste of Mexico logo" width="32" height="32">
       <span>Órale – Authentic Mexican Flavor Limited · CRO 805512</span>
     </div>
     <div>
@@ -565,8 +574,8 @@
     </div>
   </div>
   <div class="wrap" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem;line-height:1.6;">
-    <strong style="color:var(--cempasuchil);">📄 <span data-en="License" data-es="Licencia">License</span></strong><br>
-    <span data-en="© 2025 Órale – Authentic Mexican Flavor. All rights reserved. This is a private business project. Unauthorized use is prohibited." data-es="© 2025 Órale – Authentic Mexican Flavor. Todos los derechos reservados. Este es un proyecto de negocio privado. Se prohíbe el uso no autorizado.">© 2025 Órale – Authentic Mexican Flavor. All rights reserved. This is a private business project. Unauthorized use is prohibited.</span>
+    <strong style="color:var(--color-cempasuchil-yellow);">📄 <span data-en="License" data-es="Licencia">License</span></strong><br>
+    <span data-en="© 2025 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited." data-es="© 2025 Taste of Mexico. Todos los derechos reservados. Este es un proyecto de negocio privado. Se prohíbe el uso no autorizado.">© 2025 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited.</span>
   </div>
 </footer>
 
