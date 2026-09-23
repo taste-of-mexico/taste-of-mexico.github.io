@@ -140,7 +140,7 @@ const DISHES=[
         es:"El panucho llega listo para comer, coronado con pollo deshebrado, cebolla morada encurtida y aguacate — tómalo con las manos y cómelo en pocos bocados. Agrega salsa encima al gusto si lo prefieres más picoso."}},
 
   // TAMALES
-  {id:"pork-red-tamales",cat:"tamales",v:false,active:true,a:["sulphites"],img:"/img/dish/Pork Red Tamales.webp",imgW:800,imgH:498,video:"",
+  {id:"pork-red-tamales",cat:"tamales",v:false,active:true,a:["sulphites"],img:"/img/dish/Pork Red Tamales.webp",imgW:800,imgH:497,video:"MP39R82er18",
     en:{n:"Pork Red Tamales",d:"Nixtamalized corn masa filled with pork in red chilli sauce, wrapped in corn husk or banana leaf and steamed."},
     es:{n:"Tamales Rojos de Cerdo",d:"Masa de maíz nixtamalizado rellena de cerdo en salsa roja de chile, envuelta en hoja de maíz o de plátano y cocida al vapor."},
     culture:{en:"Tamales are one of the oldest and most widespread dishes in Mexico, made from nixtamalized corn masa and steamed in a wrapping — corn husk or banana leaf — a technique with deep roots in Mesoamerican cooking. They're closely tied to celebration and community: families and neighbours often gather to make big batches together. The red chile filling with pork is one of the most classic versions found across the country. The wrapping matters too: corn husk gives a milder, more traditional aroma typical of central and northern Mexico, while banana leaf lends a deeper, herbal fragrance associated with the country's southeast.",
@@ -150,7 +150,7 @@ const DISHES=[
     howToEat:{en:"The tamal comes wrapped in corn husk or banana leaf — unwrap it at the table, peeling the wrapping away from the masa rather than eating it. Eat it with your hands or a fork straight from the wrapping, and add extra salsa on the side to taste.",
         es:"El tamal llega envuelto en hoja de maíz o de plátano — desenvuélvelo en la mesa, despegando la hoja de la masa (la hoja no se come). Cómelo con las manos o con tenedor directamente desde la hoja, y añade salsa aparte al gusto."}},
 
-  {id:"pork-green-tamales",cat:"tamales",v:false,active:true,a:[],img:"/img/dish/Pork Green Tamales.webp",imgW:800,imgH:498,video:"",
+  {id:"pork-green-tamales",cat:"tamales",v:false,active:true,a:[],img:"/img/dish/Pork Green Tamales.webp",imgW:800,imgH:498,video:"MP39R82er18",
     en:{n:"Pork Green Tamales",d:"Nixtamalized corn masa filled with pork in green tomatillo sauce, wrapped in corn husk or banana leaf and steamed."},
     es:{n:"Tamales Verdes de Cerdo",d:"Masa de maíz nixtamalizado rellena de cerdo en salsa verde de tomatillo, envuelta en hoja de maíz o de plátano y cocida al vapor."},
     culture:{en:"This is the green, tomatillo-sauce version of Mexico's classic corn tamale, a dish with deep roots in Mesoamerican corn cooking and steamed in corn husk or banana leaf the traditional way. Tamales are strongly associated with gatherings and celebration, often made in big batches to share. The bright, tangy green filling is a favourite alternative to the red chile version. The wrapping matters too: corn husk gives a milder, more traditional aroma typical of central and northern Mexico, while banana leaf lends a deeper, herbal fragrance associated with the country's southeast.",
@@ -271,6 +271,16 @@ const DISHES=[
         es:"La masa se trabaja y forma a mano igual que en cada gordita que hacemos, y el relleno de setas se saltea fresco al momento en lugar de mantenerse caliente en una charola. Es un platillo vegetal que igual recibe el trato completo hecho a mano."},
     howToEat:{en:"The gordita comes filled with mushrooms, vegan cheese, pepper and onion — open it slightly if needed and eat it by hand, bite by bite. Add salsa to taste.",
         es:"La gordita llega rellena de setas, queso vegano, pimiento y cebolla — ábrela un poco si hace falta y cómela con la mano, bocado a bocado. Añade salsa al gusto."}},
+
+  {id:"tinga-gorditas",cat:"gorditas",v:false,active:true,a:["sulphites"],img:"/img/dish/Tinga Gorditas.webp",imgW:800,imgH:498,video:"SEaDEZo0Aw4",
+    en:{n:"Tinga Gorditas",d:"Thick nixtamalized corn masa pockets filled with chicken tinga — shredded chicken in a smoky chipotle-tomato sauce. Cream, tomato and onion available on request."},
+    es:{n:"Gorditas de Tinga",d:"Masa de maíz nixtamalizado gruesa rellena de tinga de pollo — pollo deshebrado en salsa de jitomate con chipotle. Crema, tomate y cebolla disponibles a petición."},
+    culture:{en:"Gorditas are thick pockets of nixtamalized corn masa, split open and filled with a stew — a format rooted in the corn cuisine of Mesoamerica and still central to Mexico's street food and market stalls. Tinga, a smoky chipotle-tomato chicken stew, is a beloved dish of traditional Mexican home cooking in its own right, and pairing it with a gordita brings together two staples of everyday, casual eating. It's the kind of antojito enjoyed as a hearty snack or light meal, often on the go.",
+        es:"Las gorditas son gruesos bolsillos de masa de maíz nixtamalizado, abiertos y rellenos de un guiso — un formato con raíces en la cocina del maíz de Mesoamérica y que sigue siendo central en la comida callejera y los puestos de mercado de México. La tinga, un guiso ahumado de pollo en salsa de jitomate con chipotle, es por sí misma un platillo muy querido de la cocina casera mexicana tradicional, y combinarla con una gordita une dos básicos de la comida cotidiana e informal. Es el tipo de antojito que se disfruta como botana abundante o comida ligera, muchas veces para llevar."},
+    craft:{en:"The nixtamalized corn masa is worked and shaped by hand, while the chicken is cooked with patience until it shreds easily and takes on the smoky depth of the chipotle-tomato sauce. Nothing about this gordita is assembled in a hurry — the tinga is simmered with care, without shortcuts.",
+        es:"La masa de maíz nixtamalizado se trabaja y forma a mano, mientras que el pollo se cocina con paciencia hasta deshebrarse con facilidad y tomar la profundidad ahumada de la salsa de jitomate con chipotle. Nada en esta gordita se ensambla con prisas — la tinga se cuece con cuidado, sin atajos."},
+    howToEat:{en:"The gordita arrives filled with chicken tinga in its chipotle-tomato sauce, ready to eat by hand, bite by bite. Cream, tomato and onion are available on request if you'd like to add them, and extra salsa or chile can be added to taste.",
+        es:"La gordita llega rellena de tinga de pollo en su salsa de jitomate con chipotle, lista para comerse con la mano, bocado a bocado. Crema, tomate y cebolla están disponibles a petición si quieres agregarlos, y puedes añadir más salsa o chile al gusto."}},
 
   {id:"cheese-empanadas",cat:"gorditas",v:false,active:true,a:["milk"],img:"/img/dish/Cheese Empanadas.webp",imgW:800,imgH:498,video:"",
     en:{n:"Cheese Empanadas",d:"Golden corn masa turnovers filled with melted cheese, served with salsa."},
