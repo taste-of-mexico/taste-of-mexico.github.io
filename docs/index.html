@@ -210,6 +210,7 @@
   .dish-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
   .dish-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;}
   .dish-name{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.2;}
+  .dish-name-en{display:block;font-family:var(--body);font-weight:500;font-size:.82rem;line-height:1.3;color:var(--ink-soft);margin-top:3px;}
   .dish-price{font-weight:700;color:var(--ink-soft);white-space:nowrap;border:1.5px dashed var(--line);border-radius:8px;padding:3px 10px;font-size:.86rem;}
   .dish-desc{color:var(--ink-soft);font-size:.95rem;margin:10px 0 14px;flex:1;}
   .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
@@ -670,7 +671,7 @@ function renderMenu(){
         ${photo}
         <div class="dish-body">
           <div class="dish-top">
-            <div class="dish-name">${t.n}${vbadge}</div>
+            <div class="dish-name">${t.n}${vbadge}${t.n2?`<span class="dish-name-en">${t.n2}</span>`:""}</div>
             <div class="dish-price">€ —</div>
           </div>
           <p class="dish-desc">${t.d}</p>

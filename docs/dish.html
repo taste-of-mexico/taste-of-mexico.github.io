@@ -160,6 +160,7 @@
   .dish-detail-body{padding:28px 30px 30px;display:flex;flex-direction:column;}
   .dish-detail-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
   .dish-detail-name{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.1;}
+  .dish-detail-name-en{display:block;font-family:var(--body);font-weight:500;font-size:1.05rem;line-height:1.3;color:var(--ink-soft);margin-top:6px;}
   .dish-detail-desc{color:var(--ink-soft);font-size:1.05rem;margin:14px 0 18px;}
   .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
   .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
@@ -369,7 +370,7 @@ function renderDish(){
       ${photo}
       <div class="dish-detail-body">
         <div class="dish-detail-top">
-          <div class="dish-detail-name">${t.n}${vbadge}</div>
+          <div class="dish-detail-name">${t.n}${vbadge}${t.n2?`<span class="dish-detail-name-en">${t.n2}</span>`:""}</div>
         </div>
         <p class="dish-detail-desc">${t.d}</p>
         <div class="dish-allergens">${chips}</div>
