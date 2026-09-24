@@ -334,7 +334,7 @@ function renderDish(){
 
   const allLabel = LANG==="en" ? "Allergens" : "Alérgenos";
   const noneLabel = LANG==="en" ? "No statutory allergens declared" : "Sin alérgenos de declaración obligatoria";
-  const vbadge = DISH.v ? `<span class="v-inline" title="Vegan">V</span>` : "";
+  const vbadge = DISH.v ? `<span class="v-inline" title="${LANG==="en" ? "Vegetarian" : "Vegetariano"}">V</span>` : "";
   let chips="";
   if(DISH.a.length){
     chips=`<span class="all-label">${allLabel}:</span>`+DISH.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
