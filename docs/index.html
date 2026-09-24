@@ -425,7 +425,7 @@
       <h2 class="sec-title" data-en="What we cook" data-es="Lo que cocinamos">What we cook</h2>
       <p class="sec-intro" data-en="Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask." data-es="Recetas tradicionales de cada rincón de México. Rotamos el menú por región, así que los platillos cambian a lo largo del año. Los niveles de picante son ajustables — solo pídelo.">Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask.</p>
       <div class="menu-note">
-        <span class="veg-key"><span class="veg-badge">V</span><span data-en="Vegan option" data-es="Opción vegana">Vegan option</span></span>
+        <span class="veg-key"><span class="veg-badge">V</span><span data-en="Vegetarian option" data-es="Opción vegetariana">Vegetarian option</span></span>
         <span data-en="Prices shown at checkout on each platform." data-es="Los precios se muestran al pagar en cada plataforma.">Prices shown at checkout on each platform.</span>
         <span data-en="Images are for illustrative purposes only and may not reflect the actual dish." data-es="Las imágenes son ilustrativas y pueden no corresponder al platillo real.">Images are for illustrative purposes only and may not reflect the actual dish.</span>
       </div>
@@ -650,7 +650,7 @@ function renderMenu(){
     html+=`<div class="menu-cat"><h3 class="menu-cat-title">${cat[LANG]}</h3><div class="dish-grid">`;
     items.forEach(d=>{
       const t=d[LANG];
-      const vbadge=d.v?`<span class="v-inline" title="Vegan">V</span>`:"";
+      const vbadge=d.v?`<span class="v-inline" title="${LANG==="en" ? "Vegetarian" : "Vegetariano"}">V</span>`:"";
       let chips="";
       if(d.a.length){
         chips=`<span class="all-label">${allLabel}:</span>`+d.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
