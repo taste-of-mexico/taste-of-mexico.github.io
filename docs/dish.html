@@ -166,7 +166,7 @@
   .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
   .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
   .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
-  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-nopal-green);color:#fff;font-size:.7rem;font-weight:700;margin-left:8px;vertical-align:middle;}
+  .v-inline{display:inline-block;font-family:var(--body);font-size:1rem;font-weight:600;color:var(--color-nopal-green);margin-left:8px;vertical-align:middle;white-space:nowrap;}
   .spice-note{margin-top:18px;font-size:.88rem;color:var(--ink-soft);font-style:italic;}
 
   .info-block{margin-top:34px;}
@@ -335,7 +335,7 @@ function renderDish(){
 
   const allLabel = LANG==="en" ? "Allergens" : "Alérgenos";
   const noneLabel = LANG==="en" ? "No statutory allergens declared" : "Sin alérgenos de declaración obligatoria";
-  const vbadge = DISH.v ? `<span class="v-inline" title="${LANG==="en" ? "Vegetarian" : "Vegetariano"}">V</span>` : "";
+  const vbadge = DISH.diet==="vegetarian" ? `<span class="v-inline">${LANG==="en" ? "(vegetarian)" : "(vegetariano)"}</span>` : "";
   let chips="";
   if(DISH.a.length){
     chips=`<span class="all-label">${allLabel}:</span>`+DISH.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
@@ -355,7 +355,9 @@ function renderDish(){
   const spiceNote = LANG==="en" ? "Spice level is adjustable — just ask." : "El nivel de picante es ajustable — solo pídelo.";
   const aboutTitle = LANG==="en" ? "About this dish" : "Sobre este platillo";
   const craftTitle = LANG==="en" ? "Made with care" : "Hecho con dedicación";
-  const howTitle = LANG==="en" ? "How to eat it" : "Cómo se come";
+  const howTitle = DISH.cat==="drinks"
+    ? (LANG==="en" ? "How to enjoy it" : "Cómo se disfruta")
+    : (LANG==="en" ? "How to eat it" : "Cómo se come");
   const videoTitle = LANG==="en" ? "Watch" : "Video";
   const videoComingSoon = LANG==="en" ? "Video coming soon" : "Video próximamente";
   const reviewPrompt = LANG==="en" ? "Tried this dish? Leave us a review on Google." : "¿Probaste este platillo? Déjanos una reseña en Google.";

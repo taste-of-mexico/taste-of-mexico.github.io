@@ -195,7 +195,7 @@
   /* ---------- Menu ---------- */
   .menu-note{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:30px;font-size:.9rem;color:var(--ink-soft);}
   .veg-key{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
-  .veg-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--color-nopal-green);color:#fff;font-size:.72rem;font-weight:700;}
+  .veg-badge{font-weight:600;color:var(--color-nopal-green);white-space:nowrap;}
   .menu-cat{margin-top:54px;}
   .menu-cat-title{font-size:1.6rem;color:var(--color-talavera-blue);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
   .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--color-cempasuchil-yellow) 0 8px,transparent 8px 16px);}
@@ -219,7 +219,7 @@
   .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
   .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
   .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
-  .v-inline{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--color-nopal-green);color:#fff;font-size:.66rem;font-weight:700;margin-left:8px;vertical-align:middle;}
+  .v-inline{display:inline-block;font-family:var(--body);font-size:.8rem;font-weight:600;color:var(--color-nopal-green);margin-left:6px;vertical-align:middle;white-space:nowrap;}
 
   /* ---------- About ---------- */
   #about{background:var(--paper-2);}
@@ -426,7 +426,7 @@
       <h2 class="sec-title" data-en="What we cook" data-es="Lo que cocinamos">What we cook</h2>
       <p class="sec-intro" data-en="Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask." data-es="Recetas tradicionales de cada rincón de México. Rotamos el menú por región, así que los platillos cambian a lo largo del año. Los niveles de picante son ajustables — solo pídelo.">Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask.</p>
       <div class="menu-note">
-        <span class="veg-key"><span class="veg-badge">V</span><span data-en="Vegetarian option" data-es="Opción vegetariana">Vegetarian option</span></span>
+        <span class="veg-key"><span class="veg-badge" data-en="(vegetarian)" data-es="(vegetariano)">(vegetarian)</span><span data-en="Meat-free dish" data-es="Platillo sin carne">Meat-free dish</span></span>
         <span data-en="Prices shown at checkout on each platform." data-es="Los precios se muestran al pagar en cada plataforma.">Prices shown at checkout on each platform.</span>
         <span data-en="Images are for illustrative purposes only and may not reflect the actual dish." data-es="Las imágenes son ilustrativas y pueden no corresponder al platillo real.">Images are for illustrative purposes only and may not reflect the actual dish.</span>
       </div>
@@ -635,7 +635,8 @@ const CATS=[
   {id:"tamales", en:"Tamales", es:"Tamales"},
   {id:"tacos", en:"Tacos &amp; Tortas", es:"Tacos y Tortas"},
   {id:"gorditas", en:"Gorditas &amp; Empanadas", es:"Gorditas y Empanadas"},
-  {id:"mains", en:"Carnitas, Mole &amp; Sides", es:"Carnitas, Mole y Guarniciones"}
+  {id:"mains", en:"Carnitas, Mole &amp; Sides", es:"Carnitas, Mole y Guarniciones"},
+  {id:"drinks", en:"Fresh Waters", es:"Aguas Frescas"}
 ];
 
 let LANG="en";
@@ -651,7 +652,7 @@ function renderMenu(){
     html+=`<div class="menu-cat"><h3 class="menu-cat-title">${cat[LANG]}</h3><div class="dish-grid">`;
     items.forEach(d=>{
       const t=d[LANG];
-      const vbadge=d.v?`<span class="v-inline" title="${LANG==="en" ? "Vegetarian" : "Vegetariano"}">V</span>`:"";
+      const vbadge=d.diet==="vegetarian"?`<span class="v-inline">${LANG==="en" ? "(vegetarian)" : "(vegetariano)"}</span>`:"";
       let chips="";
       if(d.a.length){
         chips=`<span class="all-label">${allLabel}:</span>`+d.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
