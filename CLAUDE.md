@@ -65,7 +65,7 @@ Everything lives in one file, structured top to bottom as:
 
 - Allergen tagging follows the 14 EU/FSAI statutory allergens (see the `#about` safety box copy) — when adding a dish, set `a: [...]` accurately using the existing `ALLERGENS` keys (`gluten`, `milk`, `soy`, `sesame`, `nuts`, `peanuts`, `sulphites`); use `a: []` if none apply (renders "No statutory allergens declared").
 - External links to keep in sync if the business changes them: Uber Eats / Deliveroo order links (currently placeholder `#`), WhatsApp (`https://wa.me/353899610776`), Instagram/Facebook (placeholder `#`, marked with `EDITAR` comments), Google Business Profile (placeholder `#`).
-- The Refund Policy PDF (`Orale_Refund_Policy_V1.0.pdf`) is linked from both the `#refund` section and the footer via its absolute GitHub Pages URL — if the PDF filename changes, update both links.
+- The Refund Policy PDF (`docs/Refund_Policy_V1.0.pdf`) is linked with the relative path `Refund_Policy_V1.0.pdf` from the `#refund` section and footer of `index.html` and from the footer of `dish.html` — if the PDF filename changes, update all three links.
 
 ## Estructura del repositorio
 

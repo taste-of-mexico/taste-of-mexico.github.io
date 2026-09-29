@@ -212,7 +212,7 @@ const DISHES=[
 
   // TACOS & TORTAS
   {id:"tacos-al-pastor",cat:"tacos",active:true,a:["sulphites"],img:"/img/dish/Tacos al Pastor.webp",imgW:800,imgH:498,video:"",
-    en:{n:"Tacos al Pastor",d:"Three corn tortilla tacos with pastor-marinated pork, onion, coriander and pineapple."},
+    en:{n:"Tacos al Pastor",n2:"Pastor Tacos",d:"Three corn tortilla tacos with pastor-marinated pork, onion, coriander and pineapple."},
     es:{n:"Tacos al Pastor",d:"Tres tacos de tortilla de maíz con cerdo marinado al pastor, cebolla, cilantro y piña."},
     culture:{en:"Tacos al pastor grew out of Lebanese-Mexican immigrant cooking, which brought spit-roasted, shawarma-style meat to central Mexico, where it was adapted with local chiles and a pineapple garnish to become one of Mexico's most beloved taquería dishes. It's quintessential street food, usually eaten standing at a taco stand rather than at a formal sit-down meal. Its mix of influences makes it a genuinely Mexican dish, even though it's a relatively modern creation rather than a prehispanic one.",
         es:"Los tacos al pastor surgieron de la cocina de inmigrantes libaneses en México, que trajeron la carne asada al trompo estilo shawarma al centro del país, donde se adaptó con chiles locales y un toque de piña hasta convertirse en uno de los platillos de taquería más queridos de México. Es comida callejera por excelencia, que normalmente se come de pie en un puesto de tacos y no en una comida formal. Su mezcla de influencias lo convierte en un platillo genuinamente mexicano, aunque sea una creación relativamente moderna y no prehispánica."},
@@ -222,7 +222,7 @@ const DISHES=[
         es:"El cerdo marinado al pastor llega servido sobre pequeñas tortillas de maíz, con cebolla, cilantro y piña ya encima. Añade salsa al gusto y come cada taco con la mano en un par de bocados — también es común exprimirle un poco de limón."}},
 
   {id:"tortas-al-pastor",cat:"tacos",active:true,a:["gluten","sulphites"],img:"/img/dish/Tortas al Pastor.webp",imgW:800,imgH:498,video:"",
-    en:{n:"Tortas al Pastor",d:"Bolillo roll filled with pastor pork, beans, avocado, onion, coriander and salsa."},
+    en:{n:"Tortas al Pastor",n2:"Pastor Tortas",d:"Bolillo roll filled with pastor pork, beans, avocado, onion, coriander and salsa."},
     es:{n:"Tortas al Pastor",d:"Bolillo relleno de cerdo al pastor, con frijol, aguacate, cebolla, cilantro y salsa."},
     culture:{en:"The torta is Mexico's answer to the sandwich, built on a crusty bolillo roll and filled with whatever's cooking — here, the same pastor-marinated pork found in tacos al pastor. Like tacos al pastor, the filling traces back to Lebanese-Mexican immigrant cooking rather than an older tradition. Tortas are everyday, on-the-go food, sold at stalls and small shops across the country.",
         es:"La torta es la respuesta mexicana al sándwich, hecha sobre un bolillo crujiente y rellena de lo que se esté cocinando — en este caso, el mismo cerdo marinado al pastor de los tacos al pastor. Al igual que los tacos al pastor, este relleno se remonta a la cocina de inmigrantes libaneses en México y no a una tradición más antigua. Las tortas son comida cotidiana, para llevar, que se vende en puestos y pequeños negocios por todo el país."},
@@ -304,7 +304,7 @@ const DISHES=[
 
   // MAINS
   {id:"carnitas-al-pastor",cat:"mains",active:true,a:["sulphites"],img:"/img/dish/Carnitas al Pastor.webp",imgW:800,imgH:498,video:"",
-    en:{n:"Carnitas al Pastor",d:"Pastor-marinated slow-cooked pork, crisped and juicy, with onion and coriander."},
+    en:{n:"Carnitas al Pastor",n2:"Pastor Carnitas",d:"Pastor-marinated slow-cooked pork, crisped and juicy, with onion and coriander."},
     es:{n:"Carnitas al Pastor",d:"Cerdo confitado y marinado al estilo pastor, dorado y jugoso, con cebolla y cilantro."},
     culture:{en:"Carnitas is a classic Mexican way of slow-cooking pork until tender and then crisping it, traditionally associated with the state of Michoacán. This version gives it a pastor-style marinade, borrowing the seasoning of tacos al pastor — itself a modern, Lebanese-Mexican-influenced creation — to add a different layer of flavour to the classic technique. It's hearty, rustic food meant to be eaten fresh and hot.",
         es:"Las carnitas son una forma clásica mexicana de cocinar el cerdo a fuego lento hasta que queda tierno y luego dorarlo, tradicionalmente asociada con Michoacán. Esta versión le da un marinado estilo pastor, tomando prestado el sazón de los tacos al pastor — en sí una creación moderna con influencia libanesa-mexicana — para añadir otra capa de sabor a la técnica clásica. Es comida abundante y rústica, pensada para comerse fresca y caliente."},
