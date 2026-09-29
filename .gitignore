@@ -4,5 +4,28 @@
 /haccp/outputs/
 *.docx
 *.pdf
+!docs/Refund_Policy_V1.0.pdf
 *.xlsx
 !docs/haccp/formatos/**/*.docx
+
+# ---- IntelliJ IDEA ----
+.idea/
+*.iml
+out/
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Node (solo si usas scripts con npm para QR/imágenes) ----
+node_modules/
+
+# ---- Python (solo si usas los scripts .py de QR/optimización) ----
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# ---- Logs / temporales ----
+*.log
+*.tmp
