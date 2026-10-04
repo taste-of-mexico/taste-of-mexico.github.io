@@ -8,7 +8,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon/apple-touch-icon.png">
-<meta name="description" content="Authentic home-style Mexican food from across the country, with a rotating menu of regional dishes. Pozole, cochinita pibil, tamales and more. Order in Limerick via Uber Eats, Deliveroo and WhatsApp.">
+<meta name="description" content="Authentic home-style Mexican food from across the country, with a rotating menu of regional dishes. Pozole, cochinita pibil, tamales and more. Order in Limerick via WhatsApp or find us at local markets.">
 
 <!-- Schema.org for local SEO -->
 <script type="application/ld+json">
@@ -18,7 +18,7 @@
   "name": "Taste of Mexico",
   "servesCuisine": "Mexican",
   "email": "taste.of.mexico.limerick@gmail.com",
-  "telephone": "+353 89 961 0776",
+  "telephone": "+353 89 943 5329",
   "address": { "@type": "PostalAddress", "addressLocality": "Limerick", "addressCountry": "IE" },
   "areaServed": "Limerick, Ireland"
 }
@@ -103,6 +103,7 @@
     font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
     border:1.5px solid var(--color-talavera-blue);color:var(--color-talavera-blue);background:transparent;
     padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
+    min-height:44px;min-width:44px;
   }
   .lang-toggle:hover{background:var(--color-talavera-blue);color:#fff;}
   .nav-actions{display:flex;align-items:center;gap:10px;}
@@ -186,7 +187,7 @@
 
   /* ---------- Order section ---------- */
   #order{background:var(--paper-2);}
-  .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:40px;}
+  .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:22px;margin-top:40px;}
   .order-card{background:var(--color-cream);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;}
   .order-card h3{font-size:1.35rem;margin-bottom:8px;color:var(--color-chile-red);}
   .order-card p{color:var(--ink-soft);font-size:.98rem;margin:0 0 22px;flex:1;}
@@ -199,7 +200,7 @@
   .menu-cat{margin-top:54px;}
   .menu-cat-title{font-size:1.6rem;color:var(--color-talavera-blue);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
   .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--color-cempasuchil-yellow) 0 8px,transparent 8px 16px);}
-  .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px;}
+  .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:18px;}
   .dish{background:var(--color-cream);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
   .dish-photo{aspect-ratio:16/10;background:
       repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);
@@ -221,9 +222,32 @@
   .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
   .v-inline{display:inline-block;font-family:var(--body);font-size:.8rem;font-weight:600;color:var(--color-nopal-green);margin-left:6px;vertical-align:middle;white-space:nowrap;}
 
+  /* ---------- This Week (weekly menu with prices) ---------- */
+  .weekly{position:relative;scroll-margin-top:110px;margin-top:40px;background:#fff8e1;border:2px solid var(--color-chile-red);border-radius:18px;padding:30px 28px 24px;box-shadow:0 6px 0 var(--color-cempasuchil-yellow);}
+  .weekly[hidden]{display:none;}
+  .weekly-tag{position:absolute;top:-14px;left:24px;margin:0;background:var(--color-chile-red);color:#fff;}
+  .weekly-title{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:700;color:var(--color-chile-red);}
+  .weekly-sub{color:var(--ink-soft);margin:6px 0 0;font-size:1rem;}
+  .weekly-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:18px;margin-top:24px;}
+  .weekly-item{background:var(--color-cream);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;}
+  .weekly-name{font-family:var(--display);font-weight:600;font-size:1.3rem;line-height:1.2;}
+  .weekly-desc{color:var(--ink-soft);font-size:.95rem;margin:4px 0 0;}
+  .weekly-opts{margin:12px 0 0;padding-left:20px;font-size:.95rem;}
+  .weekly-opts li::marker{color:var(--color-nopal-green);}
+  .weekly-opts li+li{margin-top:4px;}
+  .weekly-opt-en{display:block;font-size:.82rem;line-height:1.3;color:var(--ink-soft);}
+  .weekly-link{display:block;width:fit-content;margin-top:3px;font-size:.74rem;font-weight:600;color:var(--color-talavera-blue);text-decoration:none;opacity:.8;}
+  .weekly-link:hover{opacity:1;text-decoration:underline;}
+  .weekly-prices{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+  .weekly-price{font-weight:700;font-size:.95rem;background:var(--color-nopal-green);color:#fff;border-radius:8px;padding:4px 11px;white-space:nowrap;}
+  .weekly-note{margin:10px 0 0;font-size:.88rem;font-style:italic;color:var(--color-talavera-blue);}
+  .weekly-notes{list-style:none;margin:22px 0 0;padding:16px 0 0;border-top:2px dashed var(--line);display:flex;flex-direction:column;gap:6px;font-size:.9rem;color:var(--ink-soft);}
+  .weekly-notes li::before{content:"✦";color:var(--color-chile-red);margin-right:8px;}
+  @media(max-width:480px){.weekly{padding:26px 18px 20px;}}
+
   /* ---------- About ---------- */
   #about{background:var(--paper-2);}
-  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:44px;}
+  .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px;margin-top:44px;}
   .member{background:var(--color-cream);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:center;}
   .photo-ph{aspect-ratio:1/1;background:
       radial-gradient(circle at 50% 38%,#fff 0 28%,transparent 28%),
@@ -233,12 +257,12 @@
   .photo-ph span{position:relative;z-index:2;margin-bottom:18px;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:700;background:rgba(0,0,0,.28);padding:5px 12px;border-radius:999px;}
   .member-body{padding:24px 22px 28px;}
   .member-name{font-family:var(--display);font-weight:700;font-size:1.3rem;}
-  .member-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-chile-red);margin:8px 0 14px;line-height:1.5;}
+  .member-role{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-chile-red);margin:8px 0 14px;line-height:1.5;overflow-wrap:break-word;hyphens:auto;max-width:100%;}
   .member-bio{color:var(--ink-soft);font-size:.96rem;}
 
   /* ---------- Decorative Mexican motifs (subtle, behind content) ---------- */
   .motif{position:absolute;pointer-events:none;z-index:0;opacity:.07;}
-  section{position:relative;}
+  section{position:relative;overflow:hidden;overflow:clip;} /* keep decorative motifs from causing horizontal scroll */
   section > .wrap{position:relative;z-index:1;}
   .order-grid,.team-grid{position:relative;z-index:1;}
 
@@ -252,12 +276,16 @@
   #contact{background:var(--color-primary);color:#fff;}
   #contact .sec-eyebrow{color:var(--color-cempasuchil-yellow);}
   #contact .sec-title{color:#fff;}
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:38px;}
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:28px 36px;margin-top:38px;}
+  .contact-item{min-width:0;}
   .contact-item .lbl{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--color-cempasuchil-yellow);margin-bottom:6px;}
   .contact-item a,.contact-item p{color:#fff;text-decoration:none;font-size:1.08rem;margin:0;font-weight:500;}
+  .contact-item > a{display:inline-flex;align-items:center;min-height:44px;max-width:100%;}
   .contact-item a:hover{text-decoration:underline;}
-  .socials{display:flex;gap:14px;margin-top:6px;}
-  .socials a{font-weight:700;text-decoration:none;border-bottom:2px solid var(--color-cempasuchil-yellow);}
+  .contact-item a.contact-email{font-size:1rem;overflow-wrap:anywhere;}
+  .socials{display:flex;flex-wrap:wrap;gap:6px 18px;}
+  .socials a{display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none;}
+  .socials a span{border-bottom:2px solid var(--color-cempasuchil-yellow);}
 
   /* ---------- Footer ---------- */
   footer{background:#1a0f0a;color:#caa;padding:34px 0;font-size:.86rem;}
@@ -298,7 +326,20 @@
   /* ---------- Mobile: single-column cards ---------- */
   @media(max-width:600px){
     section{padding:48px 0;}
-    .dish-grid,.order-grid,.team-grid{grid-template-columns:1fr;}
+    .wrap{padding:0 16px;}
+    .hero-inner{padding:56px 16px 48px;}
+    .dish-grid,.order-grid,.team-grid,.weekly-grid{grid-template-columns:1fr;}
+    .order-grid,.team-grid{margin-top:28px;}
+    .order-card{padding:24px 20px;}
+    .safety-box{padding:28px 22px;}
+    .soon-card{padding:36px 28px;}
+    .menu-cat{margin-top:42px;}
+    .menu-cat-title{font-size:1.4rem;}
+    /* comfortable touch targets for small text links */
+    .dish-more,.weekly-link,footer a{display:inline-flex;align-items:center;min-height:44px;}
+    .dish-more{margin-top:6px;}
+    .weekly-link{margin-top:0;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:8px;}
   }
 </style>
 </head>
@@ -316,6 +357,7 @@
     </a>
     <nav class="nav-links">
       <a href="#order" data-en="Order" data-es="Pedir">Order</a>
+      <a href="#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
       <a href="#menu" data-en="Menu" data-es="Menú">Menu</a>
       <a href="#about" data-en="About" data-es="Nosotros">About</a>
       <a href="#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
@@ -338,6 +380,7 @@
   </div>
   <nav class="nav-panel-links">
     <a href="#order" data-en="Order" data-es="Pedir">Order</a>
+    <a href="#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
     <a href="#menu" data-en="Menu" data-es="Menú">Menu</a>
     <a href="#about" data-en="About" data-es="Nosotros">About</a>
     <a href="#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
@@ -373,21 +416,9 @@
     <div class="sec-head">
       <span class="sec-eyebrow" data-en="Where to find us" data-es="Dónde encontrarnos">Where to find us</span>
       <h2 class="sec-title" data-en="Order &amp; find us" data-es="Pide y encuéntranos">Order &amp; find us</h2>
-      <p class="sec-intro" data-en="Order online for delivery, message us directly for the weekend run, or come say hola at the markets." data-es="Pide en línea a domicilio, escríbenos para la entrega de fin de semana, o ven a saludarnos a los mercados.">Order online for delivery, message us directly for the weekend run, or come say hola at the markets.</p>
+      <p class="sec-intro" data-en="Message us on WhatsApp for the weekend run, or come say hola at the markets." data-es="Escríbenos por WhatsApp para la entrega de fin de semana, o ven a saludarnos a los mercados.">Message us on WhatsApp for the weekend run, or come say hola at the markets.</p>
     </div>
     <div class="order-grid">
-      <div class="order-card">
-        <span class="tag" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
-        <h3>Uber Eats</h3>
-        <p data-en="Browse the full menu and order for delivery across Limerick." data-es="Explora el menú completo y pide a domicilio en Limerick.">Browse the full menu and order for delivery across Limerick.</p>
-        <a href="#" class="btn btn-primary js-soon" data-en="Open Uber Eats" data-es="Abrir Uber Eats">Open Uber Eats</a>
-      </div>
-      <div class="order-card">
-        <span class="tag" data-en="Coming soon" data-es="Próximamente">Coming soon</span>
-        <h3>Deliveroo</h3>
-        <p data-en="Our full bilingual menu, delivered to your door." data-es="Nuestro menú bilingüe completo, a la puerta de tu casa.">Our full bilingual menu, delivered to your door.</p>
-        <a href="#" class="btn btn-green js-soon" data-en="Open Deliveroo" data-es="Abrir Deliveroo">Open Deliveroo</a>
-      </div>
       <div class="order-card">
         <span class="tag" data-en="Weekends" data-es="Fines de semana">Weekends</span>
         <h3>WhatsApp</h3>
@@ -427,9 +458,16 @@
       <p class="sec-intro" data-en="Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask." data-es="Recetas tradicionales de cada rincón de México. Rotamos el menú por región, así que los platillos cambian a lo largo del año. Los niveles de picante son ajustables — solo pídelo.">Traditional recipes from every corner of Mexico. We rotate the menu by region, so dishes change through the year. Spice levels are adjustable — just ask.</p>
       <div class="menu-note">
         <span class="veg-key"><span class="veg-badge" data-en="(vegetarian)" data-es="(vegetariano)">(vegetarian)</span><span data-en="Meat-free dish" data-es="Platillo sin carne">Meat-free dish</span></span>
-        <span data-en="Prices shown at checkout on each platform." data-es="Los precios se muestran al pagar en cada plataforma.">Prices shown at checkout on each platform.</span>
+        <span data-en="This week's prices are shown below; for the rest of the menu, message us on WhatsApp for prices." data-es="Los precios de esta semana aparecen abajo; para el resto del menú, escríbenos por WhatsApp para consultar precios.">This week's prices are shown below; for the rest of the menu, message us on WhatsApp for prices.</span>
         <span data-en="Images are for illustrative purposes only and may not reflect the actual dish." data-es="Las imágenes son ilustrativas y pueden no corresponder al platillo real.">Images are for illustrative purposes only and may not reflect the actual dish.</span>
       </div>
+    </div>
+    <!-- THIS WEEK: rendered from WEEKLY_MENU (dishes-data.js); hidden when it has no items -->
+    <div class="weekly" id="this-week" hidden>
+      <span class="tag weekly-tag" data-en="With prices" data-es="Con precios">With prices</span>
+      <h3 class="weekly-title" data-en="This Week" data-es="Esta Semana">This Week</h3>
+      <p class="weekly-sub" data-en="What we're serving this week" data-es="Lo que servimos esta semana">What we're serving this week</p>
+      <div id="weeklyRoot"></div>
     </div>
     <div id="menuRoot"></div>
   </div>
@@ -500,7 +538,7 @@
       <h2 class="sec-title" data-en="Refund Policy" data-es="Política de Reembolsos">Refund Policy</h2>
       <p class="sec-intro" data-en="Because our food is freshly prepared and perishable, orders cannot be returned once they have been handed over. If your order is incorrect, incomplete, or affected by a quality issue, please contact us within 24 hours of purchase and we will review your case. Where appropriate, we will offer a replacement or a refund at our discretion. This is a short summary — the full content of the Refund Policy is contained in the PDF below." data-es="Debido a que nuestra comida se prepara al momento y es perecedera, los pedidos no pueden devolverse una vez entregados. Si tu pedido es incorrecto, está incompleto o presenta un problema de calidad, contáctanos dentro de las 24 horas posteriores a la compra y revisaremos tu caso. Cuando corresponda, ofreceremos un reemplazo o un reembolso a nuestra discreción. Este es un resumen breve — el contenido completo de la Política de Reembolsos se encuentra en el PDF a continuación.">Because our food is freshly prepared and perishable, orders cannot be returned once they have been handed over. If your order is incorrect, incomplete, or affected by a quality issue, please contact us within 24 hours of purchase and we will review your case. Where appropriate, we will offer a replacement or a refund at our discretion. This is a short summary — the full content of the Refund Policy is contained in the PDF below.</p>
     </div>
-    <a href="Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:26px;" data-en="Read the full Refund Policy (PDF)" data-es="Leer la Política de Reembolsos completa (PDF)">Read the full Refund Policy (PDF)</a>
+    <a href="Refund_Policy_V2.0.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:26px;" data-en="Read the full Refund Policy (PDF)" data-es="Leer la Política de Reembolsos completa (PDF)">Read the full Refund Policy (PDF)</a>
   </div>
 </section>
 
@@ -540,7 +578,7 @@
     <div class="contact-grid">
       <div class="contact-item">
         <div class="lbl" data-en="Email" data-es="Correo">Email</div>
-        <a href="mailto:taste.of.mexico.limerick@gmail.com">taste.of.mexico.limerick@gmail.com</a>
+        <a class="contact-email" href="mailto:taste.of.mexico.limerick@gmail.com">taste.of.mexico.<wbr>limerick<wbr>@gmail.com</a>
       </div>
       <div class="contact-item">
         <div class="lbl" data-en="Phone &amp; WhatsApp" data-es="Teléfono y WhatsApp">Phone &amp; WhatsApp</div>
@@ -549,10 +587,9 @@
       <div class="contact-item">
         <div class="lbl" data-en="Follow us" data-es="Síguenos">Follow us</div>
         <div class="socials">
-          <!-- EDITAR: pega aquí la URL de Instagram cuando esté lista -->
-          <a href="#" class="js-soon">Instagram</a>
+          <a href="https://www.instagram.com/taste.of.mexico.limerick/" target="_blank" rel="noopener"><span>Instagram</span></a>
           <!-- EDITAR: pega aquí la URL de Facebook cuando esté lista -->
-          <a href="#" class="js-soon">Facebook</a>
+          <a href="#" class="js-soon"><span>Facebook</span></a>
         </div>
       </div>
       <div class="contact-item">
@@ -570,13 +607,13 @@
       <span>Taste of Mexico</span>
     </div>
     <div>
-      <a href="Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
+      <a href="Refund_Policy_V2.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
       &nbsp;·&nbsp; © 2026
     </div>
   </div>
   <div class="wrap" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.8rem;line-height:1.6;">
     <strong style="color:var(--color-cempasuchil-yellow);">📄 <span data-en="License" data-es="Licencia">License</span></strong><br>
-    <span data-en="© 2025 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited." data-es="© 2025 Taste of Mexico. Todos los derechos reservados. Este es un proyecto de negocio privado. Se prohíbe el uso no autorizado.">© 2025 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited.</span>
+    <span data-en="© 2026 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited." data-es="© 2026 Taste of Mexico. Todos los derechos reservados. Este es un proyecto de negocio privado. Se prohíbe el uso no autorizado.">© 2026 Taste of Mexico. All rights reserved. This is a private business project. Unauthorized use is prohibited.</span>
   </div>
 </footer>
 
@@ -686,12 +723,45 @@ function renderMenu(){
   root.innerHTML=html;
 }
 
+function renderWeekly(){
+  const box=document.getElementById("this-week");
+  const W=(typeof WEEKLY_MENU!=="undefined" && WEEKLY_MENU) || {};
+  const items=W.items || [];
+  if(!items.length){ box.hidden=true; return; }
+  const forWord = LANG==="en" ? "for" : "por";
+  const vegLabel = LANG==="en" ? "(vegetarian)" : "(vegetariano)";
+  const viewLabel = LANG==="en" ? "View dish" : "Ver platillo";
+  const dishLink = id => id ? `<a class="weekly-link" href="dish.html?id=${encodeURIComponent(id)}">${viewLabel} →</a>` : "";
+  let html=`<div class="weekly-grid">`;
+  items.forEach(it=>{
+    const t=it[LANG];
+    const prices=(it.prices||[]).map(pr=>{
+      const label = pr.q ? `${pr.q} ${forWord} €${pr.p}` : `€${pr.p}${pr[LANG] ? " "+pr[LANG] : ""}`;
+      return `<span class="weekly-price">${label}</span>`;
+    }).join("");
+    html+=`<div class="weekly-item">
+      <div class="weekly-name">${t.n}${t.n2&&t.n2!==t.n?`<span class="dish-name-en">${t.n2}</span>`:""}</div>
+      ${t.d?`<p class="weekly-desc">${t.d}</p>`:""}
+      ${dishLink(it.dish)}
+      ${t.opts&&t.opts.length?`<ul class="weekly-opts">${t.opts.map(o=>`<li>${o.n}${o.veg?`<span class="v-inline">${vegLabel}</span>`:""}${o.n2&&o.n2!==o.n?`<span class="weekly-opt-en">${o.n2}</span>`:""}${dishLink(o.dish)}</li>`).join("")}</ul>`:""}
+      <div class="weekly-prices">${prices}</div>
+      ${t.note?`<p class="weekly-note">${t.note}</p>`:""}
+    </div>`;
+  });
+  html+=`</div>`;
+  const notes=W.notes || [];
+  if(notes.length) html+=`<ul class="weekly-notes">${notes.map(n=>`<li>${n[LANG]}</li>`).join("")}</ul>`;
+  document.getElementById("weeklyRoot").innerHTML=html;
+  box.hidden=false;
+}
+
 function applyLang(){
   document.documentElement.lang=LANG;
   document.querySelectorAll("[data-en]").forEach(el=>{
     el.innerHTML = LANG==="en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
   });
   document.getElementById("langBtn").textContent = LANG==="en" ? "ES" : "EN";
+  renderWeekly();
   renderMenu();
 }
 
@@ -792,7 +862,7 @@ document.getElementById("langBtn").addEventListener("click",()=>{
   });
 })();
 
-/* ---------- Coming soon popup (Uber Eats / Deliveroo) ---------- */
+/* ---------- Coming soon popup (placeholder links, e.g. Facebook) ---------- */
 (function(){
   const soonModal=document.getElementById("soonModal");
   const soonClose=document.getElementById("soonClose");
