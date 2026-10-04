@@ -89,6 +89,7 @@
     font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
     border:1.5px solid var(--color-talavera-blue);color:var(--color-talavera-blue);background:transparent;
     padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
+    min-height:44px;min-width:44px;
   }
   .lang-toggle:hover{background:var(--color-talavera-blue);color:#fff;}
   .nav-actions{display:flex;align-items:center;gap:10px;}
@@ -139,6 +140,8 @@
     transition:transform .15s,box-shadow .15s;border:2px solid transparent;
   }
   .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--color-primary);color:#fff;box-shadow:0 6px 0 #873e20;}
+  .btn-primary:hover{box-shadow:0 8px 0 #873e20;}
   .btn-out{background:transparent;color:var(--color-talavera-blue);border-color:var(--color-talavera-blue);}
   .btn-out:hover{background:var(--color-talavera-blue);color:#fff;}
 
@@ -159,7 +162,7 @@
   .dish-detail-photo img{width:100%;height:100%;object-fit:cover;cursor:zoom-in;}
   .dish-detail-body{padding:28px 30px 30px;display:flex;flex-direction:column;}
   .dish-detail-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;}
-  .dish-detail-name{font-family:var(--display);font-weight:600;font-size:2rem;line-height:1.1;}
+  .dish-detail-name{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,6vw,2rem);line-height:1.1;overflow-wrap:break-word;min-width:0;}
   .dish-detail-name-en{display:block;font-family:var(--body);font-weight:500;font-size:1.05rem;line-height:1.3;color:var(--ink-soft);margin-top:6px;}
   .dish-detail-desc{color:var(--ink-soft);font-size:1.05rem;margin:14px 0 18px;}
   .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
@@ -174,6 +177,7 @@
   .info-block p{color:var(--ink-soft);font-size:1.02rem;margin:0;}
   .review-cta{text-align:center;}
   .review-cta p{margin-bottom:16px;}
+  .review-cta .btn{margin-top:6px;}
 
   .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:
       repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);}
@@ -190,6 +194,18 @@
   .footer-logo{height:32px;width:auto;flex:0 0 auto;border-radius:50%;}
   footer a{color:var(--color-cempasuchil-yellow);text-decoration:none;}
   footer a:hover{text-decoration:underline;}
+
+  /* ---------- Mobile ---------- */
+  @media(max-width:600px){
+    section{padding:32px 0 56px;}
+    .wrap{padding:0 16px;}
+    .dish-detail-body{padding:22px 20px 24px;}
+    .info-block{margin-top:28px;}
+    .info-title{font-size:1.35rem;}
+    .not-found{padding:34px 22px;}
+    footer a{display:inline-flex;align-items:center;min-height:44px;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
 
   :focus-visible{outline:3px solid var(--color-talavera-blue);outline-offset:2px;border-radius:4px;}
 
@@ -225,6 +241,7 @@
     </a>
     <nav class="nav-links">
       <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+      <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
       <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
       <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
       <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
@@ -247,6 +264,7 @@
   </div>
   <nav class="nav-panel-links">
     <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+    <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
     <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
     <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
     <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
@@ -269,7 +287,7 @@
       <span>Taste of Mexico</span>
     </div>
     <div>
-      <a href="Refund_Policy_V1.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
+      <a href="Refund_Policy_V2.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
       &nbsp;·&nbsp; © 2026
     </div>
   </div>

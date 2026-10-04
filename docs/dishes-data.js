@@ -364,3 +364,56 @@ const DISHES=[
     howToEat:{en:"Enjoy it cold over ice, sipped alongside your meal. Its citrusy, lightly sweet flavour is especially refreshing with spicy dishes. Note that it contains caffeine.",
         es:"Disfrútalo frío con hielo, a sorbos junto a tu comida. Su sabor cítrico y ligeramente dulce es especialmente refrescante con platillos picantes. Ten en cuenta que contiene cafeína."}}
 ];
+
+/* ---------- This Week / Esta Semana ----------
+   WEEKLY_MENU is EDITED EVERY WEEK: change items, prices and notes here to update the
+   "This Week" section shown above the general menu in index.html. It is independent
+   from the DISHES catalogue above (which has no prices) — nothing here is linked to
+   DISHES ids, so editing one never affects the other.
+   - items: each one has bilingual en/es with n (name), optional d (description),
+     optional opts (list of sub-options / flavours) and optional note (shown under the item).
+     Names follow the DISHES rule: n is ALWAYS the Spanish name (in both en and es), and
+     en.n2 is the English translation shown below it. Omit n2 when the name is the same
+     in both languages (e.g. "Tamales"). Sub-options use the same shape:
+     {n:"Pollo", n2:"Chicken"} in en, {n:"Pollo"} in es; add veg:true for the
+     localized "(vegetarian)" / "(vegetariano)" badge.
+   - dish (optional, on an item or a sub-option): id of a DISHES entry; renders a small
+     "View dish" / "Ver platillo" link to dish.html?id=<dish>. Must match a DISHES id exactly.
+   - prices: list of price entries, shown joined with " · ".
+       {q:2, p:26}                                  -> "2 for €26" / "2 por €26" (combo by quantity)
+       {p:3}                                        -> "€3"
+       {p:2, en:"with any dish", es:"con cualquier platillo"} -> "€2 with any dish" (promo)
+   - notes: general bilingual notes shown at the foot of the section.
+   Leave items empty (items:[]) to hide the whole section. */
+const WEEKLY_MENU={
+  items:[
+    {id:"pozole",dish:"pork-red-pozole",
+      prices:[{q:1,p:14},{q:2,p:26},{q:3,p:38}],
+      en:{n:"Pozole Rojo",n2:"Red Pozole",d:"traditional, with pork"},
+      es:{n:"Pozole Rojo",d:"tradicional, con cerdo"}},
+
+    {id:"tamales",
+      prices:[{q:1,p:7},{q:2,p:12},{q:3,p:16}],
+      en:{n:"Red Tamales",d:"wrapped in corn husk",
+        opts:[{n:"Pollo",n2:"Chicken",dish:"chicken-red-tamales"},{n:"Cerdo",n2:"Pork",dish:"pork-red-tamales"},{n:"Nopal con queso",n2:"Nopal with cheese",veg:true,dish:"nopales-cheese-tamales"}],
+        note:"Mix any flavours in your combo."},
+      es:{n:"Tamales Rojos",d:"envueltos en hoja de maíz",
+        opts:[{n:"Pollo",dish:"chicken-red-tamales"},{n:"Cerdo",dish:"pork-red-tamales"},{n:"Nopal con queso",veg:true,dish:"nopales-cheese-tamales"}],
+        note:"Mezcla los sabores que quieras en tu combo."}},
+
+    {id:"aguas-frescas",
+      prices:[{p:3},{p:2,en:"with any dish",es:"con cualquier platillo"}],
+      en:{n:"Aguas Frescas",n2:"Fresh Waters",d:"Choose one:",
+        opts:[{n:"Horchata",dish:"horchata"},{n:"Jamaica",dish:"jamaica"}]},
+      es:{n:"Aguas Frescas",d:"Elige una:",
+        opts:[{n:"Horchata",dish:"horchata"},{n:"Jamaica",dish:"jamaica"}]}}
+  ],
+  notes:[
+    {en:"No dish is spicy. Hot salsa served separately, on request.",
+     es:"Ningún platillo es picante. Salsa picante aparte, a solicitud."},
+    {en:"Delivery available — extra charge applies (ask us).",
+     es:"Servicio a domicilio disponible — cargo extra (consúltanos)."},
+    {en:"Ask our team about allergens.",
+     es:"Consulta alérgenos con nuestro equipo."}
+  ]
+};

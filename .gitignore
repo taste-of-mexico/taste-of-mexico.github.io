@@ -4,7 +4,7 @@
 /haccp/outputs/
 *.docx
 *.pdf
-!docs/Refund_Policy_V1.0.pdf
+!docs/Refund_Policy_V2.0.pdf
 *.xlsx
 !docs/haccp/formatos/**/*.docx
 
