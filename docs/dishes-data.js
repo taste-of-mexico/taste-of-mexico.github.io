@@ -395,18 +395,18 @@ const WEEKLY_MENU={
     {id:"tamales",
       prices:[{q:1,p:7},{q:2,p:12},{q:3,p:16}],
       en:{n:"Red Tamales",d:"wrapped in corn husk",
-        opts:[{n:"Pollo",n2:"Chicken",dish:"chicken-red-tamales"},{n:"Cerdo",n2:"Pork",dish:"pork-red-tamales"},{n:"Nopal con queso",n2:"Nopal with cheese",veg:true,dish:"nopales-cheese-tamales"}],
+        opts:[{n:"Pollo",n2:"Chicken",dish:"chicken-red-tamales"},{n:"Nopal con queso",n2:"Nopal with cheese",veg:true,dish:"nopales-cheese-tamales"}],
         note:"Mix any flavours in your combo."},
       es:{n:"Tamales Rojos",d:"envueltos en hoja de maíz",
-        opts:[{n:"Pollo",dish:"chicken-red-tamales"},{n:"Cerdo",dish:"pork-red-tamales"},{n:"Nopal con queso",veg:true,dish:"nopales-cheese-tamales"}],
+        opts:[{n:"Pollo",dish:"chicken-red-tamales"},{n:"Nopal con queso",veg:true,dish:"nopales-cheese-tamales"}],
         note:"Mezcla los sabores que quieras en tu combo."}},
 
     {id:"aguas-frescas",
       prices:[{p:3},{p:2,en:"with any dish",es:"con cualquier platillo"}],
-      en:{n:"Aguas Frescas",n2:"Fresh Waters",d:"Choose one:",
-        opts:[{n:"Horchata",dish:"horchata"},{n:"Jamaica",dish:"jamaica"}]},
-      es:{n:"Aguas Frescas",d:"Elige una:",
-        opts:[{n:"Horchata",dish:"horchata"},{n:"Jamaica",dish:"jamaica"}]}}
+      en:{n:"Aguas Frescas",n2:"Fresh Waters",d:"Our drink this week:",
+        opts:[{n:"Horchata",dish:"horchata"}]},
+      es:{n:"Aguas Frescas",d:"Bebida de la semana:",
+        opts:[{n:"Horchata",dish:"horchata"}]}}
   ],
   notes:[
     {en:"No dish is spicy. Hot salsa served separately, on request.",
