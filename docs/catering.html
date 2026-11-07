@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catering · Taste of Mexico · Limerick</title>
+<link rel="icon" type="image/x-icon" href="assets/logo/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/logo/favicon/apple-touch-icon.png">
+<meta name="description" content="Taste of Mexico catering in Limerick: traditional Mexican dishes made to order for events and businesses. Pozole, cochinita pibil, tamales and more. Contact us on WhatsApp for a quote.">
+<link rel="canonical" href="https://tastemexico.ie/catering.html">
+
+<!-- Open Graph / Twitter: link preview (WhatsApp, Facebook, X…) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tastemexico.ie/catering.html">
+<meta property="og:site_name" content="Taste of Mexico">
+<meta property="og:title" content="Catering · Taste of Mexico · Limerick">
+<meta property="og:description" content="Traditional Mexican dishes made to order for events and businesses in Limerick. Contact us on WhatsApp for a quote.">
+<meta property="og:image" content="https://tastemexico.ie/assets/logo/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Taste of Mexico - Traditional Mexican Food, Limerick">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: 'Rye';
+    src: url('/assets/fonts/Rye-Regular.woff2') format('woff2'),
+         url('/assets/fonts/Rye-Regular.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  :root{
+    --color-primary:#C1592E;
+    --color-chile-red:#B22222;
+    --color-nopal-green:#006847;
+    --color-cempasuchil-yellow:#FFD700;
+    --color-talavera-blue:#0047AB;
+    --color-cream:#FBF6EC;
+    --color-molcajete-brown:#3C2418;
+    --paper-2:#F4ECDA;
+    --ink-soft:#5c4a3e;
+    --line:#e3d6bd;
+    --display:"Fraunces",Georgia,serif;
+    --body:"DM Sans",system-ui,sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--color-cream);
+    color:var(--color-molcajete-brown);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05;margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- Papel picado signature ---------- */
+  .papel{
+    display:flex;width:100%;height:42px;overflow:hidden;line-height:0;
+    background:var(--color-talavera-blue);
+  }
+  .papel svg{height:42px;flex:0 0 auto;}
+  .papel-flag{transform-origin:top center;}
+  @media(prefers-reduced-motion:no-preference){
+    .papel-flag{animation:sway 5s ease-in-out infinite;}
+    .papel svg:nth-child(2n) .papel-flag{animation-delay:-1.2s;}
+    .papel svg:nth-child(3n) .papel-flag{animation-delay:-2.4s;}
+  }
+  @keyframes sway{0%,100%{transform:rotate(-1.2deg);}50%{transform:rotate(1.2deg);}}
+
+  /* ---------- Nav ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,246,236,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;max-width:1140px;margin:0 auto;}
+  .brand-mark{display:inline-flex;align-items:center;gap:5px;font-family:'Rye',var(--display),cursive;font-weight:400;font-size:1.3rem;letter-spacing:.01em;color:var(--color-primary);text-decoration:none;}
+  .brand-mark span.dot{color:var(--color-talavera-blue);}
+  .brand-logo{height:68px;width:auto;flex:0 0 auto;}
+  @media(max-width:480px){
+    .nav-inner{padding:10px 16px;gap:8px;}
+    .brand-mark{gap:4px;font-size:1.05rem;}
+    .brand-logo{height:48px;}
+    .nav-actions{gap:6px;}
+  }
+  @media(max-width:360px){
+    .brand-mark{font-size:.85rem;}
+    .brand-logo{height:44px;}
+  }
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--color-primary);}
+  .lang-toggle{
+    font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.1em;
+    border:1.5px solid var(--color-talavera-blue);color:var(--color-talavera-blue);background:transparent;
+    padding:7px 12px;border-radius:999px;cursor:pointer;transition:all .2s;
+    min-height:44px;min-width:44px;
+  }
+  .lang-toggle:hover{background:var(--color-talavera-blue);color:#fff;}
+  .nav-actions{display:flex;align-items:center;gap:10px;}
+  .nav-toggle{
+    display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+    width:44px;height:44px;border:1.5px solid var(--line);border-radius:10px;
+    background:transparent;cursor:pointer;padding:0;flex:0 0 auto;
+  }
+  .nav-toggle-bar{display:block;width:20px;height:2px;background:var(--color-molcajete-brown);border-radius:2px;transition:transform .2s,opacity .2s;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2){opacity:0;}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .nav-overlay{
+    position:fixed;inset:0;background:rgba(36,23,18,.45);z-index:60;
+    opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .nav-overlay.is-open{opacity:1;pointer-events:auto;}
+  .nav-panel{
+    position:fixed;top:0;right:0;bottom:0;width:min(300px,84vw);
+    background:var(--color-cream);z-index:61;box-shadow:-8px 0 24px rgba(0,0,0,.18);
+    transform:translateX(100%);transition:transform .28s ease;
+    display:flex;flex-direction:column;padding:18px;
+  }
+  .nav-panel.is-open{transform:translateX(0);}
+  .nav-panel-head{display:flex;justify-content:flex-end;margin-bottom:8px;}
+  .nav-panel-close{
+    width:44px;height:44px;border:none;border-radius:50%;
+    background:rgba(0,0,0,.06);color:var(--color-molcajete-brown);font-size:1.6rem;line-height:1;
+    cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;
+  }
+  .nav-panel-close:hover{background:rgba(0,0,0,.12);}
+  .nav-panel-links{display:flex;flex-direction:column;gap:2px;}
+  .nav-panel-links a{
+    display:flex;align-items:center;min-height:44px;padding:12px 10px;
+    text-decoration:none;font-size:1rem;font-weight:600;letter-spacing:.02em;
+    color:var(--color-molcajete-brown);border-bottom:1px solid var(--line);transition:color .2s;
+  }
+  .nav-panel-links a:hover,.nav-panel-links a[aria-current="page"]{color:var(--color-primary);}
+  .nav-overlay[hidden],.nav-panel[hidden]{display:none;}
+  @media(max-width:760px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;
+    font-size:.92rem;letter-spacing:.02em;padding:14px 22px;border-radius:999px;
+    transition:transform .15s,box-shadow .15s;border:2px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-green{background:var(--color-nopal-green);color:#fff;box-shadow:0 6px 0 #00472f;}
+  .btn-green:hover{box-shadow:0 8px 0 #00472f;}
+  .btn-out{background:transparent;color:var(--color-talavera-blue);border-color:var(--color-talavera-blue);}
+  .btn-out:hover{background:var(--color-talavera-blue);color:#fff;}
+
+  /* ---------- Sections ---------- */
+  section{padding:56px 0 72px;}
+  .sec-eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;color:var(--color-talavera-blue);}
+  .sec-title{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:700;color:var(--color-molcajete-brown);margin:8px 0 0;}
+  .sec-intro{max-width:640px;color:var(--ink-soft);margin-top:16px;font-size:1.08rem;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px;}
+
+  /* ---------- Catalogue (dish cards) ---------- */
+  .menu-note{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:30px;font-size:.9rem;color:var(--ink-soft);}
+  .veg-key{display:inline-flex;align-items:center;gap:7px;font-weight:600;}
+  .veg-badge{font-weight:600;color:var(--color-nopal-green);white-space:nowrap;}
+  .menu-cat{margin-top:54px;}
+  .menu-cat-title{font-size:1.6rem;color:var(--color-talavera-blue);font-weight:700;display:flex;align-items:center;gap:14px;margin-bottom:22px;}
+  .menu-cat-title::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--color-cempasuchil-yellow) 0 8px,transparent 8px 16px);}
+  .dish-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(330px,100%),1fr));gap:18px;}
+  .dish{background:var(--color-cream);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+  .dish-photo{aspect-ratio:16/10;background:
+      repeating-linear-gradient(45deg,#f0e6cf 0 14px,#f6eedb 14px 28px);
+    display:flex;align-items:center;justify-content:center;position:relative;border-bottom:1px solid var(--line);}
+  .dish-photo svg{width:40px;height:40px;opacity:.5;}
+  .dish-photo span{position:absolute;bottom:8px;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#a8967c;font-weight:700;}
+  .dish-photo img{cursor:zoom-in;}
+  .dish-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;}
+  .dish-name{font-family:var(--display);font-weight:600;font-size:1.18rem;line-height:1.2;}
+  .dish-name-en{display:block;font-family:var(--body);font-weight:500;font-size:.82rem;line-height:1.3;color:var(--ink-soft);margin-top:3px;}
+  .dish-desc{color:var(--ink-soft);font-size:.95rem;margin:10px 0 14px;flex:1;}
+  .dish-allergens{display:flex;flex-wrap:wrap;gap:6px;align-items:center;}
+  .dish-more{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:700;color:var(--color-talavera-blue);text-decoration:none;}
+  .dish-more:hover{text-decoration:underline;}
+  .all-label{font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9a8a78;margin-right:2px;}
+  .all-chip{font-size:.72rem;font-weight:600;background:#fdeecb;color:#7a5b16;border-radius:6px;padding:3px 8px;}
+  .all-none{font-size:.72rem;color:#8aa08f;font-style:italic;}
+  .v-inline{display:inline-block;font-family:var(--body);font-size:.8rem;font-weight:600;color:var(--color-nopal-green);margin-left:6px;vertical-align:middle;white-space:nowrap;}
+
+  /* ---------- Quote CTA (end of page) ---------- */
+  .quote-box{margin-top:56px;background:var(--color-talavera-blue);color:#fff;border-radius:20px;padding:36px 34px;text-align:center;}
+  .quote-box h2{color:#fff;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;}
+  .quote-box p{margin:12px auto 22px;max-width:560px;color:rgba(255,255,255,.9);}
+  .quote-box .cta-row{justify-content:center;margin-top:0;}
+
+  /* ---------- Footer ---------- */
+  footer{background:#1a0f0a;color:#caa;padding:34px 0;font-size:.86rem;}
+  .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;}
+  .footer-logo{height:32px;width:auto;flex:0 0 auto;border-radius:50%;}
+  footer a{color:var(--color-cempasuchil-yellow);text-decoration:none;}
+  footer a:hover{text-decoration:underline;}
+
+  :focus-visible{outline:3px solid var(--color-talavera-blue);outline-offset:2px;border-radius:4px;}
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed;inset:0;z-index:200;
+    display:flex;align-items:center;justify-content:center;
+    padding:28px;background:rgba(10,6,4,.9);
+    opacity:0;visibility:hidden;transition:opacity .2s ease;
+  }
+  .lightbox.open{opacity:1;visibility:visible;}
+  .lightbox-img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+  .lightbox-close{
+    position:absolute;top:16px;right:16px;width:44px;height:44px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:50%;
+    font-size:1.7rem;line-height:1;cursor:pointer;transition:background .2s;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.3);}
+
+  /* ---------- Mobile ---------- */
+  @media(max-width:600px){
+    section{padding:36px 0 56px;}
+    .wrap{padding:0 16px;}
+    .dish-grid{grid-template-columns:1fr;}
+    .menu-cat{margin-top:42px;}
+    .menu-cat-title{font-size:1.4rem;}
+    .quote-box{padding:28px 22px;}
+    .dish-more,footer a{display:inline-flex;align-items:center;min-height:44px;}
+    .dish-more{margin-top:6px;}
+    .foot-inner{flex-direction:column;align-items:flex-start;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- PAPEL PICADO BUNTING -->
+<div class="papel" id="papel" aria-hidden="true"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html#top" class="brand-mark">
+      <img class="brand-logo" src="assets/logo/escudo_fondo_transparente-icon.png" alt="Taste of Mexico logo" width="68" height="68">
+      TASTE OF MEXICO<span class="dot">.</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+      <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
+      <a href="/catering.html" aria-current="page" data-en="Catering" data-es="Catering">Catering</a>
+      <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
+      <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+      <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langBtn" aria-label="Switch language">ES</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navPanel">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="nav-overlay" id="navOverlay" hidden></div>
+<aside class="nav-panel" id="navPanel" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nav-panel-head">
+    <button class="nav-panel-close" id="navPanelClose" aria-label="Close menu">&times;</button>
+  </div>
+  <nav class="nav-panel-links">
+    <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
+    <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
+    <a href="/catering.html" aria-current="page" data-en="Catering" data-es="Catering">Catering</a>
+    <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
+    <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
+    <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
+  </nav>
+</aside>
+
+<!-- CATERING -->
+<section id="catering">
+  <div class="wrap">
+    <span class="sec-eyebrow" data-en="Made to order · Events &amp; businesses" data-es="Sobre pedido · Eventos y negocios">Made to order · Events &amp; businesses</span>
+    <h1 class="sec-title" data-en="Catering" data-es="Catering">Catering</h1>
+    <p class="sec-intro" data-en="These are the dishes we make to order — available by pre-order for events and businesses, in quantities arranged with you. Contact us for a quote." data-es="Estos son los platillos que preparamos sobre pedido — por encargo para eventos y negocios, en cantidades a convenir. Cotiza con nosotros.">These are the dishes we make to order — available by pre-order for events and businesses, in quantities arranged with you. Contact us for a quote.</p>
+    <div class="cta-row">
+      <a href="https://wa.me/353899435329" target="_blank" rel="noopener" class="btn btn-green" data-en="Request a quote" data-es="Cotiza por WhatsApp">Request a quote</a>
+      <a href="index.html#this-week" class="btn btn-out" data-en="See this week's menu" data-es="Ver el menú de esta semana">See this week's menu</a>
+    </div>
+    <div class="menu-note">
+      <span class="veg-key"><span class="veg-badge" data-en="(vegetarian)" data-es="(vegetariano)">(vegetarian)</span><span data-en="Meat-free dish" data-es="Platillo sin carne">Meat-free dish</span></span>
+      <span data-en="Prices depend on the dishes and quantities — message us on WhatsApp for a quote." data-es="Los precios dependen de los platillos y las cantidades — escríbenos por WhatsApp para cotizar.">Prices depend on the dishes and quantities — message us on WhatsApp for a quote.</span>
+      <span data-en="Images are for illustrative purposes only and may not reflect the actual dish." data-es="Las imágenes son ilustrativas y pueden no corresponder al platillo real.">Images are for illustrative purposes only and may not reflect the actual dish.</span>
+    </div>
+
+    <!-- Rendered from DISHES (dishes-data.js) -->
+    <div id="menuRoot"></div>
+
+    <div class="quote-box">
+      <h2 data-en="Planning an event?" data-es="¿Organizas un evento?">Planning an event?</h2>
+      <p data-en="Tell us the date, the number of guests and the dishes you'd like, and we'll send you a quote." data-es="Cuéntanos la fecha, el número de personas y los platillos que te gustaría, y te enviamos una cotización.">Tell us the date, the number of guests and the dishes you'd like, and we'll send you a quote.</p>
+      <div class="cta-row">
+        <a href="https://wa.me/353899435329" target="_blank" rel="noopener" class="btn btn-green" data-en="Request a quote" data-es="Cotiza por WhatsApp">Request a quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-inner">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img class="footer-logo" src="assets/logo/escudo_fondo_transparente-icon.png" alt="Taste of Mexico logo" width="32" height="32">
+      <span>Taste of Mexico</span>
+    </div>
+    <div>
+      <a href="Refund_Policy_V2.0.pdf" target="_blank" rel="noopener" data-en="Refund &amp; Cancellation Policy" data-es="Política de Reembolsos">Refund &amp; Cancellation Policy</a>
+      &nbsp;·&nbsp; © 2026
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<script src="dishes-data.js"></script>
+<script>
+/* ---------- Papel picado bunting render ---------- */
+(function(){
+  const colors=["#B22222","#FFD700","#006847","#FFFFFF"];
+  const root=document.getElementById("papel");
+  const n=Math.ceil(window.innerWidth/60)+2;
+  let html="";
+  for(let i=0;i<n;i++){
+    const c=colors[i%colors.length];
+    html+=`<svg width="60" height="42" viewBox="0 0 60 42"><g class="papel-flag" fill="${c}">
+      <path d="M0 0 H60 V20 L30 42 L0 20 Z"/>
+      <circle cx="30" cy="14" r="5" fill="#0047AB"/>
+      <circle cx="15" cy="10" r="2.4" fill="#0047AB"/>
+      <circle cx="45" cy="10" r="2.4" fill="#0047AB"/>
+      <path d="M30 26 l4 4 -4 4 -4 -4 Z" fill="#0047AB"/></g></svg>`;
+  }
+  root.innerHTML=html;
+})();
+
+/* ---------- Catalogue categories (display order; dishes come from dishes-data.js) ---------- */
+const CATS=[
+  {id:"pozole", en:"Pozole", es:"Pozole"},
+  {id:"chilaquiles", en:"Chilaquiles", es:"Chilaquiles"},
+  {id:"yucatan", en:"Cochinita &amp; Panuchos", es:"Cochinita y Panuchos"},
+  {id:"tamales", en:"Tamales", es:"Tamales"},
+  {id:"tacos", en:"Tacos &amp; Tortas", es:"Tacos y Tortas"},
+  {id:"gorditas", en:"Gorditas &amp; Empanadas", es:"Gorditas y Empanadas"},
+  {id:"mains", en:"Carnitas, Mole &amp; Sides", es:"Carnitas, Mole y Guarniciones"},
+  {id:"drinks", en:"Fresh Waters", es:"Aguas Frescas"}
+];
+
+let LANG="en";
+
+function renderMenu(){
+  const root=document.getElementById("menuRoot");
+  let html="";
+  const allLabel = LANG==="en" ? "Allergens" : "Alérgenos";
+  const noneLabel = LANG==="en" ? "No statutory allergens declared" : "Sin alérgenos de declaración obligatoria";
+  const photoLabel = LANG==="en" ? "Photo coming soon" : "Foto próximamente";
+  const seeMoreLabel = LANG==="en" ? "See more" : "Ver más";
+  CATS.forEach(cat=>{
+    const items=DISHES.filter(d=>d.cat===cat.id && d.active!==false);
+    if(!items.length) return;
+    html+=`<div class="menu-cat"><h2 class="menu-cat-title">${cat[LANG]}</h2><div class="dish-grid">`;
+    items.forEach(d=>{
+      const t=d[LANG];
+      const vbadge=d.diet==="vegetarian"?`<span class="v-inline">${LANG==="en" ? "(vegetarian)" : "(vegetariano)"}</span>`:"";
+      let chips="";
+      if(d.a.length){
+        chips=`<span class="all-label">${allLabel}:</span>`+d.a.map(k=>`<span class="all-chip">${ALLERGENS[k][LANG]}</span>`).join("");
+      }else{
+        chips=`<span class="all-label">${allLabel}:</span><span class="all-none">${noneLabel}</span>`;
+      }
+      const largeSrc = d.img ? d.img.replace(/\.webp$/i,"-large.webp") : "";
+      const photo = d.img
+        ? `<div class="dish-photo" style="background:none;padding:0;"><img src="${d.img}" alt="${t.n}" width="${d.imgW}" height="${d.imgH}" loading="lazy" data-large="${largeSrc}" style="width:100%;height:100%;object-fit:cover;"></div>`
+        : `<div class="dish-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#c9b48f" stroke-width="1.6"><path d="M3 16.5 8 11l4 4 3-3 6 6"/><circle cx="8.5" cy="8" r="1.8"/><rect x="2.5" y="3.5" width="19" height="17" rx="2"/></svg>
+          <span>${photoLabel}</span>
+        </div>`;
+      html+=`<div class="dish">
+        ${photo}
+        <div class="dish-body">
+          <div class="dish-name">${t.n}${vbadge}${t.n2?`<span class="dish-name-en">${t.n2}</span>`:""}</div>
+          <p class="dish-desc">${t.d}</p>
+          <div class="dish-allergens">${chips}</div>
+          <a class="dish-more" href="dish.html?id=${encodeURIComponent(d.id)}">${seeMoreLabel} →</a>
+        </div>
+      </div>`;
+    });
+    html+=`</div></div>`;
+  });
+  root.innerHTML=html;
+}
+
+function applyLang(){
+  document.documentElement.lang=LANG;
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerHTML = LANG==="en" ? el.getAttribute("data-en") : el.getAttribute("data-es");
+  });
+  document.getElementById("langBtn").textContent = LANG==="en" ? "ES" : "EN";
+  renderMenu();
+}
+
+document.getElementById("langBtn").addEventListener("click",()=>{
+  LANG = LANG==="en" ? "es" : "en";
+  applyLang();
+});
+
+(function(){
+  const navToggle=document.getElementById("navToggle");
+  const navPanel=document.getElementById("navPanel");
+  const navOverlay=document.getElementById("navOverlay");
+  const navPanelClose=document.getElementById("navPanelClose");
+  let closeTimer=null;
+
+  function trapFocus(e){
+    if(e.key==="Escape"){ closeNavPanel(); return; }
+    if(e.key!=="Tab") return;
+    const focusables=navPanel.querySelectorAll("button, a[href]");
+    if(!focusables.length) return;
+    const first=focusables[0], last=focusables[focusables.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+  }
+
+  function openNavPanel(){
+    clearTimeout(closeTimer);
+    navPanel.hidden=false;
+    navOverlay.hidden=false;
+    requestAnimationFrame(()=>{
+      navPanel.classList.add("is-open");
+      navOverlay.classList.add("is-open");
+    });
+    navToggle.setAttribute("aria-expanded","true");
+    document.body.style.overflow="hidden";
+    navPanelClose.focus();
+    document.addEventListener("keydown",trapFocus);
+  }
+
+  function closeNavPanel(){
+    navPanel.classList.remove("is-open");
+    navOverlay.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded","false");
+    document.body.style.overflow="";
+    document.removeEventListener("keydown",trapFocus);
+    navToggle.focus();
+    clearTimeout(closeTimer);
+    closeTimer=setTimeout(()=>{
+      navPanel.hidden=true;
+      navOverlay.hidden=true;
+    },300);
+  }
+
+  navToggle.addEventListener("click",()=>{
+    navPanel.classList.contains("is-open") ? closeNavPanel() : openNavPanel();
+  });
+  navPanelClose.addEventListener("click",closeNavPanel);
+  navOverlay.addEventListener("click",closeNavPanel);
+  navPanel.querySelectorAll(".nav-panel-links a").forEach(a=>{
+    a.addEventListener("click",closeNavPanel);
+  });
+  window.addEventListener("resize",()=>{
+    if(window.innerWidth>760 && navPanel.classList.contains("is-open")) closeNavPanel();
+  });
+})();
+
+/* ---------- Dish photo lightbox ---------- */
+(function(){
+  const lightbox=document.getElementById("lightbox");
+  const lightboxImg=document.getElementById("lightboxImg");
+  const lightboxClose=document.getElementById("lightboxClose");
+
+  function openLightbox(src,alt){
+    lightboxImg.src=src;
+    lightboxImg.alt=alt;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+    lightboxClose.focus();
+  }
+  function closeLightbox(){
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+    lightboxImg.src="";
+  }
+
+  document.getElementById("menuRoot").addEventListener("click",e=>{
+    const img=e.target.closest(".dish-photo img");
+    if(img) openLightbox(img.dataset.large || img.src, img.alt);
+  });
+  lightboxClose.addEventListener("click",closeLightbox);
+  lightbox.addEventListener("click",e=>{
+    if(e.target===lightbox) closeLightbox();
+  });
+  document.addEventListener("keydown",e=>{
+    if(e.key==="Escape" && lightbox.classList.contains("open")) closeLightbox();
+  });
+})();
+
+applyLang();
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "bd73802498f84b399e52bface6423c1f"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
