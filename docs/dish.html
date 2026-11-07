@@ -15,6 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  @font-face {
+    font-family: 'Rye';
+    src: url('/assets/fonts/Rye-Regular.woff2') format('woff2'),
+         url('/assets/fonts/Rye-Regular.ttf') format('truetype');
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
   :root{
     --color-primary:#C1592E;
     --color-chile-red:#B22222;
@@ -68,7 +74,7 @@
     border-bottom:1px solid var(--line);
   }
   .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 24px;max-width:1140px;margin:0 auto;}
-  .brand-mark{display:inline-flex;align-items:center;gap:5px;font-family:var(--display);font-weight:900;font-size:1.4rem;letter-spacing:.02em;color:var(--color-primary);text-decoration:none;}
+  .brand-mark{display:inline-flex;align-items:center;gap:5px;font-family:'Rye',var(--display),cursive;font-weight:400;font-size:1.3rem;letter-spacing:.01em;color:var(--color-primary);text-decoration:none;}
   .brand-mark span.dot{color:var(--color-talavera-blue);}
   .brand-logo{height:68px;width:auto;flex:0 0 auto;}
   @media(max-width:480px){
@@ -242,7 +248,7 @@
     <nav class="nav-links">
       <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
       <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
-      <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
+      <a href="/catering.html" data-en="Catering" data-es="Catering">Catering</a>
       <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
       <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
       <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
@@ -265,7 +271,7 @@
   <nav class="nav-panel-links">
     <a href="index.html#order" data-en="Order" data-es="Pedir">Order</a>
     <a href="index.html#this-week" data-en="This Week" data-es="Esta Semana">This Week</a>
-    <a href="index.html#menu" data-en="Menu" data-es="Menú">Menu</a>
+    <a href="/catering.html" data-en="Catering" data-es="Catering">Catering</a>
     <a href="index.html#about" data-en="About" data-es="Nosotros">About</a>
     <a href="index.html#refund" data-en="Refunds" data-es="Reembolsos">Refunds</a>
     <a href="index.html#contact" data-en="Contact" data-es="Contacto">Contact</a>
@@ -275,7 +281,7 @@
 <!-- DISH DETAIL -->
 <section id="dishTop">
   <div class="wrap">
-    <a class="btn btn-out" href="index.html#menu" data-en="← Back to menu" data-es="← Volver al menú">← Back to menu</a>
+    <a class="btn btn-out" id="backBtn" href="index.html#this-week" data-en="← Back to this week's menu" data-es="← Volver al menú de la semana">← Back to this week's menu</a>
     <div id="dishRoot"></div>
   </div>
 </section>
@@ -324,6 +330,18 @@ const params=new URLSearchParams(location.search);
 const dishId=params.get("id");
 const DISH=DISHES.find(d=>d.id===dishId);
 
+/* Back button: return to the catering page if the visitor came from there,
+   otherwise to this week's menu (the orderable one) — also for QR scans with no referrer. */
+(function(){
+  let fromCatering=false;
+  try{ fromCatering = !!document.referrer && new URL(document.referrer).pathname.endsWith("/catering.html"); }catch(e){}
+  if(!fromCatering) return;
+  const back=document.getElementById("backBtn");
+  back.href="/catering.html";
+  back.setAttribute("data-en","← Back to catering menu");
+  back.setAttribute("data-es","← Volver al menú de catering");
+})();
+
 function renderDish(){
   const root=document.getElementById("dishRoot");
 
@@ -342,8 +360,8 @@ function renderDish(){
     const msg = LANG==="en"
       ? "This dish isn't available right now."
       : "Este platillo no está disponible por ahora.";
-    const backLabel = LANG==="en" ? "Back to menu" : "Volver al menú";
-    root.innerHTML=`<div class="not-found"><h2>${title}</h2><p>${msg}</p><a class="btn btn-out" href="index.html#menu">${backLabel}</a></div>`;
+    const backLabel = LANG==="en" ? "See this week's menu" : "Ver el menú de esta semana";
+    root.innerHTML=`<div class="not-found"><h2>${title}</h2><p>${msg}</p><a class="btn btn-out" href="index.html#this-week">${backLabel}</a></div>`;
     document.title = LANG==="en" ? "Not available · Taste of Mexico" : "No disponible · Taste of Mexico";
     return;
   }
