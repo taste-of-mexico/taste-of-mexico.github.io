@@ -388,17 +388,17 @@ const DISHES=[
 const WEEKLY_MENU={
   items:[
     {id:"pozole",dish:"pork-red-pozole",
-      prices:[{q:1,p:14},{q:2,p:26},{q:3,p:38}],
-      en:{n:"Pozole Rojo",n2:"Red Pozole",d:"traditional, with pork"},
-      es:{n:"Pozole Rojo",d:"tradicional, con cerdo"}},
+      prices:[{q:1,p:16},{q:2,p:30},{q:3,p:45}],
+      en:{n:"Pozole Rojo",n2:"Red Pozole",d:"traditional, with pork · 500 ml container"},
+      es:{n:"Pozole Rojo",d:"tradicional, con puerco · contenedor de 500 ml"}},
 
     {id:"tamales",
-      prices:[{q:1,p:7},{q:2,p:12},{q:3,p:16}],
-      en:{n:"Red Tamales",d:"wrapped in corn husk",
-        opts:[{n:"Pollo",n2:"Chicken",dish:"chicken-red-tamales"},{n:"Nopal con queso",n2:"Nopal with cheese",veg:true,dish:"nopales-cheese-tamales"}],
+      prices:[{q:1,p:8},{q:2,p:15},{q:3,p:21}],
+      en:{n:"Red Tamales",d:"approx. 120 g each, wrapped in corn husk",
+        opts:[{n:"Pollo",n2:"Chicken",dish:"chicken-red-tamales"},{n:"Puerco",n2:"Pork",dish:"pork-red-tamales"},{n:"Nopal con queso",n2:"Nopal with cheese",veg:true,dish:"nopales-cheese-tamales"}],
         note:"Mix any flavours in your combo."},
-      es:{n:"Tamales Rojos",d:"envueltos en hoja de maíz",
-        opts:[{n:"Pollo",dish:"chicken-red-tamales"},{n:"Nopal con queso",veg:true,dish:"nopales-cheese-tamales"}],
+      es:{n:"Tamales Rojos",d:"de aprox. 120 g c/u, envueltos en hoja de maíz",
+        opts:[{n:"Pollo",dish:"chicken-red-tamales"},{n:"Puerco",dish:"pork-red-tamales"},{n:"Nopal con queso",veg:true,dish:"nopales-cheese-tamales"}],
         note:"Mezcla los sabores que quieras en tu combo."}},
 
     {id:"aguas-frescas",
